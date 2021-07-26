@@ -1,16 +1,17 @@
-import firebase from 'firebase'
-
-const config = {
-    apiKey: "AIzaSyDNSExC65NXG_xHTvDbDOYrToXesFOfgak",
-    authDomain: "birdy-83c2f.firebaseapp.com",
-    databaseURL: "https://birdy-83c2f-default-rtdb.europe-west1.firebasedatabase.app/",
-    projectId: "birdy-83c2f",
-    storageBucket: "birdy-83c2f.appspot.com",
-    messagingSenderId: "69656064162",
-    appId: "1:69656064162:web:18d00ba7da0520f75b27fb",
-    measurementId: "G-LEJMY8XBN0"
+import firebase from "firebase";
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+let firebaseConfig = {
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASE_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REAT_APP_ID,
+    measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
-
-firebase.initializeApp(config);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 export default firebase;
