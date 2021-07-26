@@ -8,10 +8,10 @@ const Register = () => {
     const userName = useRef('');
     const userPassword = useRef('');
     const [isCreated, setisCreated] = useState(false);
-    const [emptyField, setEmptyField] = useState(false);
-    const [emailError, setEmailError] = useState(false);
     const [emailUse, setEmailUse] = useState(false);
     const [weakPass, setWeakPass] = useState(false);
+    const [emptyField, setEmptyField] = useState(false);
+    const [emailError, setEmailError] = useState(false);
 
     const createUser = (e) => {
         e.preventDefault();
@@ -23,22 +23,22 @@ const Register = () => {
             setEmptyField(true)
         } else {
             firebase.auth().createUserWithEmailAndPassword(mail, password)
-            .then(user => {
-                storeUser(user, mail, name, id);
-                setisCreated(true);
-            })
-            .catch(error => {
-                setisCreated(false);
-                if (error.code === 'auth/invalid-email'){
-                    setEmailError(true)
-                }
-                if (error.code === 'auth/email-already-in-use'){
-                    setEmailUse(true)
-                }
-                if (error.code === 'auth/weak-password'){
-                    setWeakPass(true)
-                }
-            });
+                .then(user => {
+                    storeUser(user, mail, name, id);
+                    setisCreated(true);
+                })
+                .catch(error => {
+                    setisCreated(false);
+                    if (error.code === 'auth/invalid-email'){
+                        setEmailError(true)
+                    }
+                    if (error.code === 'auth/email-already-in-use'){
+                        setEmailUse(true)
+                    }
+                    if (error.code === 'auth/weak-password'){
+                        setWeakPass(true)
+                    }
+                });
         }
     };
 
@@ -72,12 +72,11 @@ const Register = () => {
     if(isCreated === true){
         return <Redirect to='/home' />
     }
-
     return (
         <React.Fragment>
             <section>
                 <div className="form__container">
-                    <h2 className="title__login">S'inscrire</h2>
+                    <h2 className="title__login">Formulaire d'inscription</h2>
                     {emptyField === true &&
                     <p className="errors">Tous les champs doivent être remplis</p>
                     }

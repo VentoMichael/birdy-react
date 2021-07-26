@@ -39,7 +39,7 @@ const Login = () => {
         <React.Fragment>
             <section>
                 <div className="form__container">
-                    <h2 className="title__login">Se connecter</h2>
+                    <h2 className="title__login">Formulaire de connexion</h2>
                     {error === true &&
                     <p className="errors">Mail ou mot de passe incorrect !</p>
                     }
@@ -53,7 +53,7 @@ const Login = () => {
                             <input className="input" type="password" name="password" id="password" ref={userPassword}/>
                         </div>
                         <div className="form__control">
-                            <button type="submit" className="btn">Se connecter</button>
+                            <button type="submit" className="btn">S'inscrire</button>
                         </div>
                     </form>
                 </div>

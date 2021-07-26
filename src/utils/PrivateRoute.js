@@ -4,10 +4,10 @@ import { Route, Redirect } from 'react-router-dom';
 const TOKEN_KEY = 'jwt';
 const isLogin = () => {
     if (localStorage.getItem(TOKEN_KEY)) {
-        return true;
+        return false;
     }
 
-    return false;
+    return true;
 }
 const PrivateRoute = ({component: Component, ...rest}) => {
     return (

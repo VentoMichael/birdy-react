@@ -8,7 +8,6 @@ const Home = () => {
     const [user, setleUser] = useState([]);
     const [isLogged, setisLogged] = useState([]);
     const currentUser = useContext(AuthContext);
-    console.log(currentUser);
     const date = new Date();
     let hour = date.getHours();
 
@@ -16,14 +15,13 @@ const Home = () => {
     {
         const fetchData = async () => {
             const db = firebase.firestore();
-            const connection = firebase
-                .firestore()
+            const connection = db
                 .collection('users')
-                .where('email', '==', 'uemail')
+                .where('email', '==', 'f')
                 .onSnapshot((snap) => {
                     snap.forEach((doc) => {
                         setleUser(doc.data().user);
-                        console.log(doc.data())
+                        console.log(doc.data().user)
                     });
                 })
         };
@@ -49,7 +47,7 @@ const Home = () => {
             <section>
                 <div className="home__container">
                     <div className="header__container">
-                        <h2 className="sro">Accueil</h2>
+                        <h2 className="hidden">Accueil</h2>
                         <p>{hour >= 18 ? "Bonsoir" : "Bonjour"} {user.name}&nbsp;!</p>
                         <button className="btn_disconnect" onClick={disconnectUser}>
                             <svg className="btn_disconnect_svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4d4d4d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
