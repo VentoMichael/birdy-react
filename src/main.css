@@ -175,3 +175,6 @@ header{
     animation-delay: 0.4s;
 }
 
+.link__back{
+    text-decoration: underline;
+}

@@ -32,9 +32,9 @@ const UserList = () => {
                 <ul className="list">
                     {leState.map(user => (
                         <li key={user.id} className="list__item">
-                            <Link to={{pathname: '/users/' + user.id}} className="link_over">
-                                <span>Plus d'informations sur {user.name}</span></Link>
                             <p>{user.name}</p>
+                            <Link to={{pathname: '/users/' + user.id}} className="link__back">
+                                <span>Plus d'informations sur {user.name}</span></Link>
                         </li>
                     ))}
                 </ul>

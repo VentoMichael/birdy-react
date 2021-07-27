@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-const TOKEN_KEY = 'jwt';
+const TOKEN_KEY = 'connected';
 const isLogin = () => {
     if (localStorage.getItem(TOKEN_KEY)) {
         return false;

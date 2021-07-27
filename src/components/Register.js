@@ -3,9 +3,9 @@ import { Redirect} from "react-router-dom";
 import firebase from '../config/config';
 
 const Register = () => {
-    const userMail = useRef('');
     const userId = useRef('');
     const userName = useRef('');
+    const userMail = useRef('');
     const userPassword = useRef('');
     const [isCreated, setisCreated] = useState(false);
     const [emailUse, setEmailUse] = useState(false);
@@ -15,11 +15,11 @@ const Register = () => {
 
     const createUser = (e) => {
         e.preventDefault();
-        const name = userName.current.value;
         const id = userId.current.value;
+        const name = userName.current.value;
         const mail = userMail.current.value;
         const password = userPassword.current.value;
-        if (mail === "" || name === "" || password === "" || id === "") {
+        if (id === "" || name === "" || mail === "" || password === "") {
             setEmptyField(true)
         } else {
             firebase.auth().createUserWithEmailAndPassword(mail, password)
@@ -50,7 +50,7 @@ const Register = () => {
             password.type = "password";
         }
     };
-    const storeUser = (user, mail, name, id) => {
+    const storeUser = (id, name, user, mail, ) => {
         firebase.firestore().collection('users').doc().set({
             name:name,
             email:mail,

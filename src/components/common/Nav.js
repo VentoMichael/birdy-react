@@ -24,6 +24,7 @@ class Nav extends Component {
             return (
                 <React.Fragment>
                     <div className="nav__container">
+                        <Link to='/home'>
                         <svg className="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                              viewBox="0 0 168.5 209">
                             <g transform="translate(0.000000,626.000000) scale(0.100000,-0.100000)">
@@ -42,6 +43,7 @@ class Nav extends Component {
 		 M418,4368c-10-57-37-120-55-132c-14-8-23-5-48,19c-47,45-75,94-62,107c12,12,109,36,149,37C422,4400,424,4396,418,4368z"/>
                             </g>
                         </svg>
+                        </Link>
                         <div className="nav">
                             <Link to='/home' className="nav__link">
                                 <p>Home</p>
