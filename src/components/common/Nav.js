@@ -7,7 +7,7 @@ class Nav extends Component {
             return (
                 <React.Fragment>
                     <div>
-                        <Link to='/register' className="login__link">S'inscrire</Link>
+                        <Link to='/register' className="link__back">Je me crée un compte</Link>
                     </div>
                 </React.Fragment>
             )
@@ -16,7 +16,7 @@ class Nav extends Component {
             return (
                 <React.Fragment>
                     <div>
-                        <Link to='/'>Se connecter</Link>
+                        <Link to='/' className="link__back">J'ai déjà un compte</Link>
                     </div>
                 </React.Fragment>
             )
@@ -50,6 +50,9 @@ class Nav extends Component {
                             </Link>
                             <Link to='/users' className="nav__link">
                                 <p>Utilisateurs</p>
+                            </Link>
+                            <Link to='/encyclopedia' className="nav__link">
+                                <p>Encyclopédie</p>
                             </Link>
                         </div>
                     </div>

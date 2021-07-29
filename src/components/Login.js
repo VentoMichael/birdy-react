@@ -44,6 +44,7 @@ const Login = () => {
                     <p className="errors">Mail ou mot de passe incorrect !</p>
                     }
                     <form action="#" method="POST" className="form form__login" onSubmit={connectUser}>
+                        <div className="container__login">
                         <div className="form__control">
                             <label className="label" htmlFor="email">E-mail</label>
                             <input className="input" type="email" name="email" id="email" ref={userMail}/>
@@ -52,8 +53,9 @@ const Login = () => {
                             <label className="label" htmlFor="password">Mot de passe</label>
                             <input className="input" type="password" name="password" id="password" ref={userPassword}/>
                         </div>
+                        </div>
                         <div className="form__control">
-                            <button type="submit" className="btn">S'inscrire</button>
+                            <button type="submit" className="btn">Se connecter</button>
                         </div>
                     </form>
                 </div>

@@ -89,6 +89,12 @@ header{
     position: absolute;
     top: -9999px;
 }
+h2{
+    font-size: 1.3em;
+}
+h3{
+    font-size: 1.2em;
+}
 /************** nav **********************/
 .nav {
     max-width: 600px;
@@ -177,4 +183,61 @@ header{
 
 .link__back{
     text-decoration: underline;
+}
+.form__login{
+    margin: 10px 0 15px;
+}
+.show__pass{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 1px solid black;
+    background: transparent;
+    height: 30px;
+    border-radius: 5px;
+    width: 50px;
+}
+.show__pass svg{
+    width: 100%;
+}
+.password__input{
+    position: relative;
+}
+.container__login,.grid__parent__characteristic{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    margin-bottom: 10px;
+}
+.container__login .form__control{
+    display: flex;
+    flex-direction: column;
+}
+.input{
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 5px;
+    min-height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.btn{
+    width: 150px;
+    height: 30px;
+    border: 1px solid #2845A5;
+    border-radius: 5px;
+    background: white;
+    color: black;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+.btn:hover{
+    background: #2845A5;
+    color: white;
+    border-color: black;
+}
+.container__characteristic{
+    grid-column-start: 1;
+    grid-column-end: 3;
 }

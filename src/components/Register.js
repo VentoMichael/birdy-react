@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import { Redirect} from "react-router-dom";
+import {Redirect} from "react-router-dom";
 import firebase from '../config/config';
 
 const Register = () => {
@@ -29,13 +29,13 @@ const Register = () => {
                 })
                 .catch(error => {
                     setisCreated(false);
-                    if (error.code === 'auth/invalid-email'){
+                    if (error.code === 'auth/invalid-email') {
                         setEmailError(true)
                     }
-                    if (error.code === 'auth/email-already-in-use'){
+                    if (error.code === 'auth/email-already-in-use') {
                         setEmailUse(true)
                     }
-                    if (error.code === 'auth/weak-password'){
+                    if (error.code === 'auth/weak-password') {
                         setWeakPass(true)
                     }
                 });
@@ -50,16 +50,16 @@ const Register = () => {
             password.type = "password";
         }
     };
-    const storeUser = (id, name, user, mail, ) => {
+    const storeUser = (id, name, user, mail,) => {
         firebase.firestore().collection('users').doc().set({
-            name:name,
-            email:mail,
-            id:id}
+                name: name,
+                email: mail,
+                id: id
+            }
         );
     };
 
-    useEffect(() =>
-    {
+    useEffect(() => {
         firebase.auth().onAuthStateChanged(firebaseUser => {
             if (firebaseUser) {
                 setisCreated(true);
@@ -69,8 +69,8 @@ const Register = () => {
         })
     }, []);
 
-    if(isCreated === true){
-        return <Redirect to='/home' />
+    if (isCreated === true) {
+        return <Redirect to='/home'/>
     }
     return (
         <React.Fragment>
@@ -81,40 +81,53 @@ const Register = () => {
                     <p className="errors">Tous les champs doivent être remplis</p>
                     }
                     <form action="#" method="POST" className="form form__login" onSubmit={createUser}>
-                        <div className="form__control">
-                            <label className="label" htmlFor="name">Nom</label>
-                            <input className="input" type="text" name="name" id="name" placeholder="Marco Polo" ref={userName}/>
+                        <div className="container__login">
+                            <div className="form__control">
+                                <label className="label" htmlFor="name">Nom</label>
+                                <input className="input" type="text" name="name" id="name" placeholder="Marco Polo"
+                                       ref={userName}/>
+                            </div>
+
+                            <div className="form__control">
+                                <label className="label" htmlFor="userId">ID fourni par l'institut des Sciences
+                                    Naturelles</label>
+                                <input className="input" type="text" name="userId" id="userId" placeholder="0123456789"
+                                       ref={userId}/>
+                            </div>
                         </div>
+                        <div className="container__login">
 
-                        <div className="form__control">
-                            <label className="label" htmlFor="userId">ID fourni par l'institut des Sciences Naturelles</label>
-                            <input className="input" type="text" name="userId" id="userId" placeholder="0123456789" ref={userId}/>
+                            <div className="form__control">
+                                {emailError === true &&
+                                <p className="errors">Veuillez entrer une adresse mail valide</p>
+                                }
+                                {emailUse === true &&
+                                <p className="errors">Il existe déja un compte avec cet email</p>
+                                }
+                                <label className="label" htmlFor="email">E-mail</label>
+                                <input className="input" type="email" name="email" id="email"
+                                       placeholder="marcopolo@email.com" ref={userMail}/>
+
+                            </div>
+
+                            <div className="form__control password__input">
+                                {weakPass === true &&
+                                <p className="errors">Le mot de passe doit avoir 6 caractères minimum</p>
+                                }
+                                <label className="label" htmlFor="password">Mot de passe</label>
+                                <input className="input" type="password" name="password" id="password"
+                                       ref={userPassword}/>
+                                <button className="show__pass" type="button" onClick={showPassword}>
+                                    <span className="hidden">Montrer le mot de passe</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="#606a73" strokeWidth="1.5" strokeLinecap="round"
+                                         strokeLinejoin="round" className="feather feather-eye">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
-
-                        <div className="form__control">
-                            {emailError === true &&
-                            <p className="errors">Veuillez entrer une adresse mail valide</p>
-                            }
-                            {emailUse === true &&
-                            <p className="errors">Il existe déja un compte avec cet email</p>
-                            }
-                            <label className="label" htmlFor="email">E-mail</label>
-                            <input className="input" type="email" name="email" id="email" placeholder="marcopolo@email.com" ref={userMail}/>
-
-                        </div>
-
-                        <div className="form__control password__input">
-                            {weakPass === true &&
-                            <p className="errors">Le mot de passe doit avoir 6 caractères minimum</p>
-                            }
-                            <label className="label" htmlFor="password">Mot de passe</label>
-                            <input className="input" type="password" name="password" id="password" ref={userPassword}/>
-                            <button className="show__pass" type="button" onClick={showPassword}>
-                                <span className="sro">Montrer le mot de passe</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#606a73" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                            </button>
-                        </div>
-
                         <div className="form__control">
                             <button type="submit" className="btn">S'inscrire</button>
                         </div>
