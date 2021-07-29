@@ -50,6 +50,27 @@ ol, ul {
 blockquote, q {
     quotes: none;
 }
+@font-face{font-family:roboto;
+    src:url(fonts/roboto/roboto-regular-webfont.eot);
+    src:url(fonts/roboto/roboto-regular-webfont.eot?#iefix) format('embedded-opentype'),
+    url(fonts/roboto/roboto-regular-webfont.woff2) format('woff2'),
+    url(fonts/roboto/roboto-regular-webfont.woff) format('woff'),
+    url(fonts/roboto/roboto-regular-webfont.ttf) format('truetype'),
+    url(fonts/roboto/roboto-regular-webfont.svg#loraB) format('svg')}
+@font-face{font-family:balooB;
+    src:url(fonts/baloo/baloo2-extrabold-webfont.eot);
+    src:url(fonts/baloo/baloo2-extrabold-webfont.eot?#iefix) format('embedded-opentype'),
+    url(fonts/baloo/baloo2-extrabold-webfont.woff2) format('woff2'),
+    url(fonts/baloo/baloo2-extrabold-webfont.woff) format('woff'),
+    url(fonts/baloo/baloo2-extrabold-webfont.ttf) format('truetype'),
+    url(fonts/baloo/baloo2-extrabold-webfont.svg#loraB) format('svg')}
+@font-face{font-family:balooR;
+    src:url(fonts/baloo/baloo2-medium-webfont.eot);
+    src:url(fonts/baloo/baloo2-medium-webfont.eot?#iefix) format('embedded-opentype'),
+    url(fonts/baloo/baloo2-medium-webfont.woff2) format('woff2'),
+    url(fonts/baloo/baloo2-medium-webfont.woff) format('woff'),
+    url(fonts/baloo/baloo2-medium-webfont.ttf) format('truetype'),
+    url(fonts/baloo/baloo2-medium-webfont.svg#loraB) format('svg')}
 
 blockquote:before, blockquote:after,
 q:before, q:after {
@@ -62,10 +83,14 @@ table {
     border-spacing: 0;
 }
 
-.logo,svg {
+svg {
     width: 50px;
 }
-
+.logo{
+    font-family: 'balooB',sans-serif;
+    font-size: 2em;
+    color: #0367A6;
+}
 a {
     text-decoration: none;
     color: inherit;
@@ -73,12 +98,13 @@ a {
 
 body {
     background-color: #f7f7f7;
-    font-family: "Nunito", Helvetica, Arial, sans-serif;
+    font-family: "open", Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: #2e2e2e;
     width: 90%;
-    max-width: 600px;
+    max-width: 700px;
+    box-sizing: border-box;
     margin: 0 auto;
 }
 header{
@@ -89,11 +115,17 @@ header{
     position: absolute;
     top: -9999px;
 }
+.nav__link,h4,h2,h3{
+    font-family: 'balooR',sans-serif;
+}
+h4{
+    font-size:1.2em;
+}
 h2{
-    font-size: 1.3em;
+    font-size: 1.6em;
 }
 h3{
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 /************** nav **********************/
 .nav {
@@ -224,7 +256,7 @@ h3{
 .btn{
     width: 150px;
     height: 30px;
-    border: 1px solid #2845A5;
+    border: 1px solid #0367A6;
     border-radius: 5px;
     background: white;
     color: black;
@@ -233,11 +265,14 @@ h3{
     transition: .3s;
 }
 .btn:hover{
-    background: #2845A5;
+    background: #0367A6;
     color: white;
     border-color: black;
 }
-.container__characteristic{
+.container__characteristic,.container__audio__bird{
     grid-column-start: 1;
     grid-column-end: 3;
+}
+.name__of__bird{
+    margin: 20px 0 10px;
 }

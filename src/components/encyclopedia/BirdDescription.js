@@ -36,8 +36,8 @@ class BirdDescription extends Component {
                     </div>
                     <section>
                         <img id="bird_img" className="single__bird__img" width="300px" alt={this.state.bird.name}/>
-                        <h2 className="name__of__bird">{this.state.bird.name}</h2>
-                        <p className="latin__name__of__bird">{this.state.bird.latin}</p>
+                        <h2 className="name__of__bird">{this.state.bird.name} <span className="latin__name__of__bird">({this.state.bird.latin})</span></h2>
+
                         <div className="container__login">
                             <section className="box__container container__description">
                                 <h3 aria-level="3" className="description__title">Description</h3>
