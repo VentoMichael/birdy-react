@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Link, Redirect} from "react-router-dom";
 import firebase from '../../config/config';
-import Loader from "../common/Loader";
 
 const BirdList = () => {
     const [leState, setleState] = useState(null);
@@ -25,25 +24,25 @@ const BirdList = () => {
         return <Redirect to='/'/>
     }
     if (leState === null) {
-        return <Loader/>
+        return <Redirect to='/encyclopedia'/>
     }
     return (
         <React.Fragment>
             <section>
                 <h2 aria-level="2">Encyclopédie</h2>
                 <section>
-                    <ul className="list">
+                    <ul className="list container__encuclopedia">
                         {leState.map(bird => (
                             <li key={bird.id} className="list__item list__encyclopedia">
                                 <h3 aria-level="3">
                                     {bird.name}
                                 </h3>
+                                <img src={bird.img} className="encyclopedia__img" width="90px" height="90px"
+                                     alt={bird.name}/>
                                 <Link to={{pathname: '/encyclopedia/' + bird.id}} className="link__back">
-                                <span className="hidden">
-                                    Voir
-                                </span>
-                                    <img src='' className="encyclopedia__img" width="90px" height="90px"
-                                         alt={bird.name}/>
+                                    <span>
+                                        Accéder aux informations de {bird.name}
+                                    </span>
                                 </Link>
                             </li>
                         ))}

@@ -88,7 +88,7 @@ svg {
 }
 .logo{
     font-family: 'balooB',sans-serif;
-    font-size: 2em;
+    font-size: 2.5em;
     color: #0367A6;
 }
 a {
@@ -221,7 +221,7 @@ h3{
 }
 .show__pass{
     position: absolute;
-    bottom: 0;
+    top: 26px;
     right: 0;
     border: 1px solid black;
     background: transparent;
@@ -275,4 +275,30 @@ h3{
 }
 .name__of__bird{
     margin: 20px 0 10px;
+}
+.container__users li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 10px;
+}
+.container__user{
+    display: flex;
+    flex-direction: column;
+}
+.container__catches__user,.container__encuclopedia{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    margin-bottom: 10px;
+}
+.list__encyclopedia{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 10px;
+}
+.container__infos__user{
+    margin: auto;
+    text-align: center;
 }

@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import {Redirect, Link} from "react-router-dom";
 import firebase from '../../config/config';
-import Loader from "../common/Loader";
 
 class BirdDescription extends Component {
     state = {
         bird: {},
         id: '',
-        loading: false,
     };
 
     componentDidMount() {
@@ -16,16 +14,12 @@ class BirdDescription extends Component {
             this.setState({
                 bird: doc.data(),
                 id: doc.id,
-                loading: true
             });
         });
     }
 
     render() {
         let user = firebase.auth().currentUser;
-        if (this.state.loading === false) {
-            return <Loader/>
-        }
         if (user) {
             return (
                 <React.Fragment>
@@ -35,9 +29,13 @@ class BirdDescription extends Component {
                         </Link>
                     </div>
                     <section>
-                        <img id="bird_img" className="single__bird__img" width="300px" alt={this.state.bird.name}/>
-                        <h2 className="name__of__bird">{this.state.bird.name} <span className="latin__name__of__bird">({this.state.bird.latin})</span></h2>
-
+                        <h2 className="name__of__bird">
+                            {this.state.bird.name}
+                            <span className="latin__name__of__bird">
+                                ({this.state.bird.latin})
+                            </span>
+                        </h2>
+                        <img className="single__bird__img" width="300px" src={this.state.bird.img} alt={this.state.bird.name}/>
                         <div className="container__login">
                             <section className="box__container container__description">
                                 <h3 aria-level="3" className="description__title">Description</h3>
@@ -82,18 +80,18 @@ class BirdDescription extends Component {
                             <section className="box__container container__alimentation">
                                 <h3 aria-level="3" className="alimentation__title">Alimentation</h3>
                                 <p>
-                                    {this.state.bird.food}
+                                    {this.state.bird.alimentation}
                                 </p>
                             </section>
                             <section className="box__container container__house">
                                 <h3 aria-level="3" className="house__title">Habitat</h3>
                                 <p>
-                                    {this.state.bird.living}
+                                    {this.state.bird.habitat}
                                 </p>
                             </section>
                             <section className="box__container container__audio__bird">
                                 <h3 aria-level="3" className="audio__title">Chant</h3>
-                                <audio controls id="audio">
+                                <audio controls id="audio" src="/media/cc0-audio/t-rex-roar.mp3">
                                     Your browser does not support the
                                     <code>audio</code> element.
                                 </audio>

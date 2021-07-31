@@ -1,25 +1,26 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import firebase from '../config/config';
 
 const Register = () => {
+    const userMail = useRef('');
     const userId = useRef('');
     const userName = useRef('');
-    const userMail = useRef('');
     const userPassword = useRef('');
     const [isCreated, setisCreated] = useState(false);
     const [emailUse, setEmailUse] = useState(false);
     const [weakPass, setWeakPass] = useState(false);
+    const [idScience, setIdScience] = useState(false);
     const [emptyField, setEmptyField] = useState(false);
     const [emailError, setEmailError] = useState(false);
 
     const createUser = (e) => {
         e.preventDefault();
-        const id = userId.current.value;
         const name = userName.current.value;
+        const id = userId.current.value;
         const mail = userMail.current.value;
         const password = userPassword.current.value;
-        if (id === "" || name === "" || mail === "" || password === "") {
+        if (mail === "" || name === "" || password === "" || id === "") {
             setEmptyField(true)
         } else {
             firebase.auth().createUserWithEmailAndPassword(mail, password)
@@ -38,19 +39,14 @@ const Register = () => {
                     if (error.code === 'auth/weak-password') {
                         setWeakPass(true)
                     }
+                    if (!/[0-9]{4}[a-zA-Z]{2}/.test(id))
+                    {
+                        setIdScience(true)
+                    }
                 });
         }
     };
-
-    const showPassword = () => {
-        const password = document.getElementById("password");
-        if (password.type === "password") {
-            password.type = "text";
-        } else {
-            password.type = "password";
-        }
-    };
-    const storeUser = (id, name, user, mail,) => {
+    const storeUser = (user, mail, name, id) => {
         firebase.firestore().collection('users').doc().set({
                 name: name,
                 email: mail,
@@ -68,7 +64,14 @@ const Register = () => {
             }
         })
     }, []);
-
+    const showPassword = () => {
+        const password = document.getElementById("password");
+        if (password.type === "password") {
+            password.type = "text";
+        } else {
+            password.type = "password";
+        }
+    };
     if (isCreated === true) {
         return <Redirect to='/home'/>
     }
@@ -77,9 +80,6 @@ const Register = () => {
             <section>
                 <div className="form__container">
                     <h2 className="title__login">Formulaire d'inscription</h2>
-                    {emptyField === true &&
-                    <p className="errors">Tous les champs doivent être remplis</p>
-                    }
                     <form action="#" method="POST" className="form form__login" onSubmit={createUser}>
                         <div className="container__login">
                             <div className="form__control">
@@ -91,29 +91,31 @@ const Register = () => {
                             <div className="form__control">
                                 <label className="label" htmlFor="userId">ID fourni par l'institut des Sciences
                                     Naturelles</label>
-                                <input className="input" type="text" name="userId" id="userId" placeholder="0123456789"
+                                <input className="input" type="text" name="userId" id="userId" placeholder="1234AB"
                                        ref={userId}/>
+                                {idScience === true &&
+                                <p className="errors">Oops! L' identifiant n’est pas valide! (4 lettres et 2 chiffres)
+                                </p>
+                                }
                             </div>
+
                         </div>
                         <div className="container__login">
-
                             <div className="form__control">
+                                <label className="label" htmlFor="email">E-mail</label>
+                                <input className="input" type="email" name="email" id="email"
+                                       placeholder="marcopolo@email.com" ref={userMail}/>
                                 {emailError === true &&
                                 <p className="errors">Veuillez entrer une adresse mail valide</p>
                                 }
                                 {emailUse === true &&
-                                <p className="errors">Il existe déja un compte avec cet email</p>
+                                <p className="errors">Cet email est déjà lié à un compte, <Link to="/login" className="link__back">
+                                    <span>je me connecte</span></Link></p>
                                 }
-                                <label className="label" htmlFor="email">E-mail</label>
-                                <input className="input" type="email" name="email" id="email"
-                                       placeholder="marcopolo@email.com" ref={userMail}/>
-
                             </div>
 
                             <div className="form__control password__input">
-                                {weakPass === true &&
-                                <p className="errors">Le mot de passe doit avoir 6 caractères minimum</p>
-                                }
+
                                 <label className="label" htmlFor="password">Mot de passe</label>
                                 <input className="input" type="password" name="password" id="password"
                                        ref={userPassword}/>
@@ -126,12 +128,19 @@ const Register = () => {
                                         <circle cx="12" cy="12" r="3"></circle>
                                     </svg>
                                 </button>
+                                {weakPass === true &&
+                                <p className="errors">Le mot de passe doit avoir 6 caractères minimum</p>
+                                }
                             </div>
                         </div>
                         <div className="form__control">
                             <button type="submit" className="btn">S'inscrire</button>
                         </div>
+                        {emptyField === true &&
+                        <p className="errors">Tous les champs doivent être remplis</p>
+                        }
                     </form>
+
                 </div>
             </section>
         </React.Fragment>
@@ -139,3 +148,6 @@ const Register = () => {
 };
 
 export default Register;
+
+
+
