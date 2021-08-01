@@ -52,7 +52,7 @@ class User extends Component {
                             <div className="container__infos__user">
                                 <h2 aria-level="2">{user.name}</h2>
                                 <img src={user.avatar} className="users__img" width="90px" height="90px"
-                                     alt={user.name}/>
+                                     alt={"Photo de profil de " + user.name}/>
                                 <p>{user.userId}</p>
                             </div>
                             <div className="container__catches__user">

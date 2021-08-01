@@ -1,30 +1,34 @@
 import React, { useState,useContext, useEffect } from 'react';
-import { Redirect,Link} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { AuthContext } from '../context/Auth';
 
 import firebase from '../config/config';
 
 const Home = () => {
     const [user, setleUser] = useState([]);
+    const [birds, setleBirds] = useState(null);
     const [isLogged, setisLogged] = useState([]);
-    const currentUser = useContext(AuthContext);
+    const currentUser = firebase.auth().currentUser;
+    const uid = currentUser.uid;
     const date = new Date();
     let hour = date.getHours();
 
     useEffect(() =>
     {
         const fetchData = async () => {
+
             const db = firebase.firestore();
             const connection = db
                 .collection('users')
-                //.where('email', '==', currentUser.email)
-                .where('email', '==', 'd')
+                .where('uid', '==', currentUser.uid)
                 .onSnapshot((snap) => {
                     snap.forEach((doc) => {
                         setleUser(doc.data().user);
                         console.log(doc.data().user)
                     });
                 })
+            const dataBird = await db.collection('captures').where("uid", "==", uid).limit(3).get();
+            setleBirds (dataBird.docs.map (doc => ({...doc.data(), id: doc.id})));
         };
         fetchData();
     }, []);
@@ -49,7 +53,7 @@ const Home = () => {
                 <div className="home__container">
                     <div className="home__section">
                         <h2 className="hidden">Accueil</h2>
-                        <p>{hour >= 18 ? "Bonsoir" : "Bonjour"} {user.name}&nbsp;!</p>
+                        <p>{hour >= 18 ? "Bonsoir" : "Bonjour"} &nbsp;!</p>
                         <button className="btn_disconnect" onClick={disconnectUser}>
                             <svg className="btn_disconnect_svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>

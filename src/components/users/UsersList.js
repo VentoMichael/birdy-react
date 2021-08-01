@@ -34,7 +34,7 @@ const UserList = () => {
                             <li key={user.id} className="list__item">
                                 <h3 aria-level="3">{user.name}</h3>
                                 <img src={user.avatar} className="users__img" width="90px" height="90px"
-                                     alt={user.name}/>
+                                     alt={"Photo de profil de " + user.name}/>
                                 <Link to={{pathname: '/users/' + user.id}} className="link__back">
                                     <span>Plus d'informations sur {user.name}</span></Link>
                             </li>

@@ -38,7 +38,7 @@ const BirdList = () => {
                                     {bird.name}
                                 </h3>
                                 <img src={bird.img} className="encyclopedia__img" width="90px" height="90px"
-                                     alt={bird.name}/>
+                                     alt={"Photo de profil de " + bird.name}/>
                                 <Link to={{pathname: '/encyclopedia/' + bird.id}} className="link__back">
                                     <span>
                                         Accéder aux informations de {bird.name}
