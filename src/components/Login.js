@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Redirect} from 'react-router-dom';
+import {Redirect,Link} from 'react-router-dom';
 import firebase from '../config/config';
 
 const Login = () => {
@@ -59,6 +59,9 @@ const Login = () => {
                             <button type="submit" className="btn">Se connecter</button>
                         </div>
                     </form>
+                    <div>
+                        <Link to='/register' className="link__back">Je me crée un compte</Link>
+                    </div>
                 </div>
             </section>
         </React.Fragment>

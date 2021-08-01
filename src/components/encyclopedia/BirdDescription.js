@@ -32,7 +32,7 @@ class BirdDescription extends Component {
                         <h2 className="name__of__bird">
                             {this.state.bird.name}
                             <span className="latin__name__of__bird">
-                                ({this.state.bird.latin})
+                                 ({this.state.bird.latin})
                             </span>
                         </h2>
                         <img className="single__bird__img" width="300px" src={this.state.bird.img} alt={this.state.bird.name}/>
@@ -50,32 +50,32 @@ class BirdDescription extends Component {
                             </section>
                             <section className="box__container container__characteristic">
                                 <h3 aria-level="3" className="characteristic__title">Caractéristiques</h3>
-                                <section className="grid__parent__characteristic">
-                                    <div className="grid__child__characteristic">
+                                <div className="grid__parent__characteristic">
+                                    <section className="grid__child__characteristic">
                                         <h4 aria-level="4">Poids</h4>
                                         <p>{this.state.bird.weight} g</p>
-                                    </div>
-                                    <div className="grid__child__characteristic">
+                                    </section>
+                                    <section className="grid__child__characteristic">
                                         <h4 aria-level="4">Taille</h4>
                                         <p>{this.state.bird.heigth} cm</p>
-                                    </div>
-                                    <div className="grid__child__characteristic">
+                                    </section>
+                                    <section className="grid__child__characteristic">
                                         <h4 aria-level="4">Envergure</h4>
                                         <p>{this.state.bird.size} cm</p>
-                                    </div>
-                                    <div className="grid__child__characteristic">
-                                        <h4 aria-level="4">Ordre</h4>
-                                        <p>{this.state.bird.order}</p>
-                                    </div>
-                                    <div className="grid__child__characteristic">
+                                    </section>
+                                    <section className="grid__child__characteristic">
                                         <h4 aria-level="4">Famille</h4>
                                         <p>{this.state.bird.family}</p>
-                                    </div>
-                                    <div className="grid__child__characteristic">
-                                        <h4 aria-level="4">Espèce</h4>
-                                        <p>{this.state.bird.species}</p>
-                                    </div>
-                                </section>
+                                    </section>
+                                    <section className="grid__child__characteristic">
+                                        <h4 aria-level="4">Type de vol</h4>
+                                        <p>{this.state.bird.fly}</p>
+                                    </section>
+                                    <section className="grid__child__characteristic">
+                                        <h4 aria-level="4">Durée de vie</h4>
+                                        <p>{this.state.bird.lifetime}</p>
+                                    </section>
+                                </div>
                             </section>
                             <section className="box__container container__alimentation">
                                 <h3 aria-level="3" className="alimentation__title">Alimentation</h3>
@@ -89,7 +89,13 @@ class BirdDescription extends Component {
                                     {this.state.bird.habitat}
                                 </p>
                             </section>
-                            <section className="box__container container__audio__bird">
+                            <section className="box__container container__map">
+                                <h3 aria-level="3" className="house__title">Distribution</h3>
+                                <p>
+                                    {this.state.bird.distribution}
+                                </p>
+                            </section>
+                            <section className="box__container">
                                 <h3 aria-level="3" className="audio__title">Chant</h3>
                                 <audio controls id="audio" src="/media/cc0-audio/t-rex-roar.mp3">
                                     Your browser does not support the

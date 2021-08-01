@@ -140,7 +140,9 @@ const Register = () => {
                         <p className="errors">Tous les champs doivent être remplis</p>
                         }
                     </form>
-
+                    <div>
+                        <Link to='/' className="link__back">J'ai déjà un compte</Link>
+                    </div>
                 </div>
             </section>
         </React.Fragment>
