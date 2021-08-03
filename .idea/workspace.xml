@@ -2,15 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17828cd5-a385-432b-b5c3-1b610e6645b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/captures/CaptureList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/captures/Capture.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/encyclopedia/BirdDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/encyclopedia/BirdDescription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/encyclopedia/BirdList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/encyclopedia/BirdList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/UsersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/UsersList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Audio.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/captures/CaptureList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/CaptureList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Nav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/encyclopedia/BirdDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/encyclopedia/BirdDescription.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/encyclopedia/BirdList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/encyclopedia/BirdList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/User.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/UsersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/UsersList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/Auth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +88,7 @@
       <workItem from="1624631781486" duration="1624000" />
       <workItem from="1624731707411" duration="27424000" />
       <workItem from="1627287978261" duration="5450000" />
-      <workItem from="1627300144895" duration="45002000" />
+      <workItem from="1627300144895" duration="65316000" />
     </task>
     <servers />
   </component>

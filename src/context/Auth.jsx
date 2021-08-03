@@ -9,14 +9,9 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         firebase.auth().onAuthStateChanged((user) => {
-            setCurrentUser(user)
-            setPending(false)
+            setCurrentUser(user);
         });
     }, []);
-
-    if(pending){
-        return <p>Loading...</p>
-    }
 
     return (
         <AuthContext.Provider

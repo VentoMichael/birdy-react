@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {Redirect, Link} from "react-router-dom";
-import firebase from '../../config/config';
+import firebase from '../../config/config.jsx';
+import GMap from '../common/GoogleMap.jsx';
+import Image from '../common/Image.jsx';
+import Audio from '../common/Audio.jsx';
 
 class BirdDescription extends Component {
     state = {
@@ -9,18 +12,14 @@ class BirdDescription extends Component {
     };
 
     componentDidMount() {
-        const ref = firebase.firestore().collection('encyclopedia').doc(this.props.match.params.id);
-        ref.get().then((doc) => {
+        firebase.firestore().collection('encyclopedia').doc(this.props.match.params.id).get().then((doc) => {
             this.setState({
                 bird: doc.data(),
                 id: doc.id,
             });
         });
     }
-
     render() {
-        let user = firebase.auth().currentUser;
-        if (user) {
             return (
                 <React.Fragment>
                     <div>
@@ -35,7 +34,9 @@ class BirdDescription extends Component {
                                  ({this.state.bird.latin})
                             </span>
                         </h2>
-                        <img className="single__bird__img" width="300px" src={this.state.bird.img} alt={"Photo de profil de " + this.state.bird.name}/>
+                        <div className="ency__definition">
+                            <div className="ency__definition">{this.state.bird.img ? <Image img={"birds/" + this.state.bird.img} width={300} height={225} /> : 'Pas de photos'}</div>
+                        </div>
                         <div className="container__login">
                             <section className="box__container container__description">
                                 <h3 aria-level="3" className="description__title">Description</h3>
@@ -57,11 +58,11 @@ class BirdDescription extends Component {
                                     </section>
                                     <section className="grid__child__characteristic">
                                         <h4 aria-level="4">Taille</h4>
-                                        <p>{this.state.bird.heigth} cm</p>
+                                        <p>{this.state.bird.height} cm</p>
                                     </section>
                                     <section className="grid__child__characteristic">
                                         <h4 aria-level="4">Envergure</h4>
-                                        <p>{this.state.bird.size} cm</p>
+                                        <p>{this.state.bird.envergure} cm</p>
                                     </section>
                                     <section className="grid__child__characteristic">
                                         <h4 aria-level="4">Famille</h4>
@@ -80,7 +81,9 @@ class BirdDescription extends Component {
                             <section className="box__container container__alimentation">
                                 <h3 aria-level="3" className="alimentation__title">Alimentation</h3>
                                 <p>
-                                    {this.state.bird.alimentation}
+                                    {this.state.bird.alimentation ? this.state.bird.alimentation.map((item, id) =>
+                                        <p key={id}>{item},</p>
+                                    ) : '/'}
                                 </p>
                             </section>
                             <section className="box__container container__house">
@@ -91,24 +94,16 @@ class BirdDescription extends Component {
                             </section>
                             <section className="box__container container__map">
                                 <h3 aria-level="3" className="house__title">Distribution</h3>
-                                <p>
-                                    {this.state.bird.distribution}
-                                </p>
+                                <div className="ency__definition ency__definition--map">{this.state.bird.distribution ? <GMap initialPos={{ lat: 50.63093493440036, lng: 5.5671638926487175 }} positions={this.state.bird.distribution} zoom={8} getCoordinates={true} /> : '/'}</div>
                             </section>
                             <section className="box__container">
                                 <h3 aria-level="3" className="audio__title">Chant</h3>
-                                <audio controls id="audio" src="/media/cc0-audio/t-rex-roar.mp3">
-                                    Your browser does not support the
-                                    <code>audio</code> element.
-                                </audio>
+                                <div className="ency__definition">{this.state.bird.chipping ? <Audio audio={this.state.bird.chipping} /> : '/'}</div>
                             </section>
                         </div>
                     </section>
                 </React.Fragment>
             );
-        } else {
-            return <Redirect to='/'/>
-        }
     }
 }
 

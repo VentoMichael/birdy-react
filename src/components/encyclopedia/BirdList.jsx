@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link, Redirect} from "react-router-dom";
-import firebase from '../../config/config';
+import firebase from '../../config/config.jsx';
+import Image from '../common/Image.jsx';
 
 const BirdList = () => {
     const [leState, setleState] = useState(null);
@@ -37,8 +38,7 @@ const BirdList = () => {
                                 <h3 aria-level="3">
                                     {bird.name}
                                 </h3>
-                                <img src={bird.img} className="encyclopedia__img" width="90px" height="90px"
-                                     alt={"Photo de profil de " + bird.name}/>
+                                <div className="encyclopedia__bird_picture">{bird.img ? <Image img={"birds/" + bird.img} width={300} height={225} /> : 'Pas de photos'}</div>
                                 <Link to={{pathname: '/encyclopedia/' + bird.id}} className="link__back">
                                     <span>
                                         Accéder aux informations de {bird.name}

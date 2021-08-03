@@ -1,6 +1,7 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useContext, useState} from 'react';
 import {Link, Redirect} from "react-router-dom";
-import firebase from '../config/config';
+import firebase from '../config/config.jsx';
+import { AuthContext } from '../context/Auth.jsx';
 
 const Register = () => {
     const userMail = useRef('');
@@ -55,15 +56,18 @@ const Register = () => {
         );
     };
 
-    useEffect(() => {
-        firebase.auth().onAuthStateChanged(firebaseUser => {
-            if (firebaseUser) {
-                setisCreated(true);
-            } else {
-                setisCreated(false);
-            }
-        })
-    }, []);
+    //useEffect(() => {
+    //    firebase.auth().onAuthStateChanged(firebaseUser => {
+    //        if (firebaseUser) {
+    //            setisCreated(true);
+    //        } else {
+    //            setisCreated(false);
+    //        }
+    //    })
+    //}, []);
+
+    const {currentUser} = useContext(AuthContext);
+
     const showPassword = () => {
         const password = document.getElementById("password");
         if (password.type === "password") {

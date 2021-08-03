@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Link, Redirect } from "react-router-dom";
-import firebase from '../../config/config';
+import firebase from '../../config/config.jsx';
 
 const CaptureList = () => {
     const [leState, setleState] = useState(null);

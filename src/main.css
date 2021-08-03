@@ -145,7 +145,6 @@ h3{
     justify-content: center;
     left: 0;
 }
-
 .nav__link {
     padding: 10px;
 }
@@ -301,4 +300,16 @@ h3{
 .container__infos__user{
     margin: auto;
     text-align: center;
+}
+.bird__image{
+    width: auto;
+    height: auto;
+    max-width: 500px;
+    max-height: 300px;
+}
+.encyclopedia__bird_picture .bird__image{
+    width: auto;
+    height: auto;
+    max-width: 250px;
+    max-height: 250px;
 }
