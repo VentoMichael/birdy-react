@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link, Redirect} from "react-router-dom";
 import firebase from '../../config/config.jsx';
+import Image from '../common/Image.jsx';
 
 class User extends Component {
     state = {
@@ -51,8 +52,7 @@ class User extends Component {
                         <div className="container__login container__user">
                             <div className="container__infos__user">
                                 <h2 aria-level="2">{user.name}</h2>
-                                <img src={user.avatar} className="users__img" width="90px" height="90px"
-                                     alt={"Photo de profil de " + user.name}/>
+                                <div className="users__img">{user.avatar ? <Image img={"/users/" + user.avatar} width={300} height={225} alt={"Photo de profil de " + user.name} /> : <Image img={"/users/default.png"} width={300} height={225} alt={"Photo de profil par défault"} />}</div>
                                 <p>{user.userId}</p>
                             </div>
                             <div className="container__catches__user">

@@ -35,7 +35,7 @@ class BirdDescription extends Component {
                             </span>
                         </h2>
                         <div className="ency__definition">
-                            <div className="ency__definition">{this.state.bird.img ? <Image img={"birds/" + this.state.bird.img} width={300} height={225} /> : 'Pas de photos'}</div>
+                            {this.state.bird.img ? <Image img={"/encyclopedia/birds/" + this.state.bird.img} width={300} height={225} alt={"Photo de profil de " + this.state.bird.name} /> : "Aucune photo d'oiseau"}
                         </div>
                         <div className="container__login">
                             <section className="box__container container__description">

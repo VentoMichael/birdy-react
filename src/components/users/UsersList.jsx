@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link, Redirect} from "react-router-dom";
 import firebase from '../../config/config.jsx';
+import Image from '../common/Image.jsx';
 
 const UserList = () => {
     const [leState, setleState] = useState([]);
@@ -33,8 +34,9 @@ const UserList = () => {
                         {leState.map(user => (
                             <li key={user.id} className="list__item">
                                 <h3 aria-level="3">{user.name}</h3>
-                                <img src={user.avatar} className="users__img" width="90px" height="90px"
-                                     alt={"Photo de profil de " + user.name}/>
+                                <div className="ency__definition">
+                                    <div className="users__img">{user.avatar ? <Image img={"/users/" + user.avatar} width={300} height={225} alt={"Photo de profil de " + user.name} /> : <Image img={"/users/default.png"} width={300} height={225} alt={"Photo de profil par défault"} />}</div>
+                                </div>
                                 <Link to={{pathname: '/users/' + user.id}} className="link__back">
                                     <span>Plus d'informations sur {user.name}</span></Link>
                             </li>

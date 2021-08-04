@@ -313,3 +313,7 @@ h3{
     max-width: 250px;
     max-height: 250px;
 }
+.users__img .bird__image{
+    max-width: 150px;
+    max-height: 300px;
+}

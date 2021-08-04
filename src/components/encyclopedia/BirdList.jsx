@@ -38,7 +38,7 @@ const BirdList = () => {
                                 <h3 aria-level="3">
                                     {bird.name}
                                 </h3>
-                                <div className="encyclopedia__bird_picture">{bird.img ? <Image img={"birds/" + bird.img} width={300} height={225} /> : 'Pas de photos'}</div>
+                                <div className="encyclopedia__bird_picture">{bird.img ? <Image img={"/encyclopedia/birds/" + bird.img} width={300} height={225} alt={"Photo de profil de " + bird.name} /> : "Aucune photo d'oiseau"}</div>
                                 <Link to={{pathname: '/encyclopedia/' + bird.id}} className="link__back">
                                     <span>
                                         Accéder aux informations de {bird.name}

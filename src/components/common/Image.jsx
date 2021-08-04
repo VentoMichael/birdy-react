@@ -5,7 +5,7 @@ export default function Image(props) {
     const [url, setUrl] = useState('');
 
     useEffect(() => {
-        firebase.storage().ref('/encyclopedia/' + props.img).getDownloadURL().then((url) => {
+        firebase.storage().ref(props.img).getDownloadURL().then((url) => {
             setUrl(url);
         })
     })
