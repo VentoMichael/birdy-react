@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
 import {Link, withRouter} from "react-router-dom";
+import React, {useState, useContext,Component} from 'react';
+import {AuthContext} from '../../context/Auth.jsx';
 
 class Nav extends Component {
     render() {

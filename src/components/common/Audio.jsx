@@ -15,8 +15,8 @@ export default function Audio(props) {
             <audio
                 controls
                 src={url}>
-                Your browser does not support the
-                <code>audio</code> element.
+                Votre navigateur ne prend pas en charge l'élément
+                <code>audio</code>.
             </audio>
         </figure>
     )

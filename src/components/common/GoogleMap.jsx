@@ -17,12 +17,10 @@ export class MapContainer extends Component{
             showingInfoWindow: true
         })
     };
-
     containerStyle = {
         maxWidth: '300px',
         maxHeight: '300px',
     }
-
 
     render(){
         return (
@@ -33,18 +31,16 @@ export class MapContainer extends Component{
                      onClick={this.props.getCoordinates}
                      containerStyle={this.containerStyle}
                 >
-
                     {this.props.positions ? this.props.positions.map((position, key) =>
                         <Marker position={position} key={key} name={position.name} superficy={position.superficy} onClick={this.onMarkerClick} />
                     ) : ''}
-
                 </Map>
                 <InfoWindow
                     marker={this.state.activeMarker}
                     visible={this.state.showingInfoWindow}>
-                    <div>
-                        <h1>{this.state.selectedPlace.name}</h1>
-                    </div>
+                    <section>
+                        <h2 aria-level="2">{this.state.selectedPlace.name}</h2>
+                    </section>
                 </InfoWindow>
             </Fragment>
         )

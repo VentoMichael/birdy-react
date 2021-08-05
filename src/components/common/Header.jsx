@@ -6,11 +6,8 @@ class Header extends Component {
             <React.Fragment>
                 <header>
                     <div className="nav__container">
-                        <p className="logo">
-                            Birdy
-                        </p>
+                        <h1 aria-level="1" className="header_title logo">Birdy</h1>
                     </div>
-                    <h1 className="header_title hidden">Birdy</h1>
                 </header>
             </React.Fragment>
         )
