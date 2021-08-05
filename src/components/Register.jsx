@@ -87,7 +87,7 @@ const Register = () => {
         <React.Fragment>
             <section>
                 <div className="form__container">
-                    <h2 className="title__login">Formulaire d'inscription</h2>
+                    <h2 aria-level="2" className="title__login">Formulaire d'inscription</h2>
                     <form action="#" method="POST" className="form form__login" onSubmit={createUser}>
                         <div className="container__login">
                             <div className="form__control">
