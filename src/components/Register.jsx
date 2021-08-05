@@ -9,11 +9,12 @@ const Register = () => {
     const userName = useRef('');
     const userPassword = useRef('');
     const [isCreated, setisCreated] = useState(false);
-    const [emailUse, setEmailUse] = useState(false);
-    const [weakPass, setWeakPass] = useState(false);
-    const [idScience, setIdScience] = useState(false);
     const [emptyField, setEmptyField] = useState(false);
     const [emailError, setEmailError] = useState(false);
+    const [idScience, setIdScience] = useState(false);
+    const [emailUse, setEmailUse] = useState(false);
+    const [weakPass, setWeakPass] = useState(false);
+    const {currentUser} = useContext(AuthContext);
 
     const createUser = (e) => {
         e.preventDefault();
@@ -21,6 +22,7 @@ const Register = () => {
         const id = userId.current.value;
         const mail = userMail.current.value;
         const password = userPassword.current.value;
+
         if (mail === "" || name === "" || password === "" || id === "") {
             setEmptyField(true)
         } else {
@@ -31,13 +33,13 @@ const Register = () => {
                 })
                 .catch(error => {
                     setisCreated(false);
-                    if (error.code === 'auth/invalid-email') {
+                    if (error.code === 'auth/invalid-email'){
                         setEmailError(true)
                     }
-                    if (error.code === 'auth/email-already-in-use') {
+                    if (error.code === 'auth/email-already-in-use'){
                         setEmailUse(true)
                     }
-                    if (error.code === 'auth/weak-password') {
+                    if (error.code === 'auth/weak-password'){
                         setWeakPass(true)
                     }
                     if (!/[0-9]{4}[a-zA-Z]{2}/.test(id))
@@ -47,26 +49,6 @@ const Register = () => {
                 });
         }
     };
-    const storeUser = (user, mail, name, id) => {
-        firebase.firestore().collection('users').doc().set({
-                name: name,
-                email: mail,
-                id: id
-            }
-        );
-    };
-
-    //useEffect(() => {
-    //    firebase.auth().onAuthStateChanged(firebaseUser => {
-    //        if (firebaseUser) {
-    //            setisCreated(true);
-    //        } else {
-    //            setisCreated(false);
-    //        }
-    //    })
-    //}, []);
-
-    const {currentUser} = useContext(AuthContext);
 
     const showPassword = () => {
         const password = document.getElementById("password");
@@ -76,9 +58,31 @@ const Register = () => {
             password.type = "password";
         }
     };
-    if (isCreated === true) {
-        return <Redirect to='/home'/>
+
+    const storeUser = (user, mail, name, id) => {
+        const uid = user.user.uid;
+        firebase.firestore().collection('users').doc(uid).set({
+            name:name,
+            email:mail,
+            userId:id,
+            userUid:uid});
+    };
+
+    useEffect(() =>
+    {
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            if (firebaseUser) {
+                setisCreated(true);
+            } else {
+                setisCreated(false);
+            }
+        })
+    }, []);
+
+    if(isCreated === true){
+        return <Redirect to='/home' />
     }
+
     return (
         <React.Fragment>
             <section>
