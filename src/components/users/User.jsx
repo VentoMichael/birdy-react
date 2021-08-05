@@ -17,18 +17,19 @@ class User extends Component {
             this.setState({
                 user: doc.data(),
                 id: doc.id,
+                loading: true
             });
         });
-        const birds = firebase.firestore().collection('catches').where("email", "==", this.props.match.params.id);
+        const birds = firebase.firestore().collection('catches').where("userUid", "==", this.props.match.params.id);
         birds.get().then((doc) => {
             this.setState({
-                birds: doc.docs.map(doc => ({...doc.data(), id: doc.id}))
+                birds: doc.docs.map (doc => ({...doc.data(), id: doc.id}))
             });
         });
-        const sites = firebase.firestore().collection('sites').where("email", "==", this.props.match.params.id);
+        const sites = firebase.firestore().collection('sites').where("userUid", "==", this.props.match.params.id);
         sites.get().then((doc) => {
             this.setState({
-                sites: doc.docs.map(doc => ({...doc.data(), id: doc.id}))
+                sites: doc.docs.map (doc => ({...doc.data(), id: doc.id}))
             });
         });
     }
@@ -36,7 +37,6 @@ class User extends Component {
     render() {
         const {birds, sites, user} = this.state;
         let curuser = firebase.auth().currentUser;
-
         if (curuser) {
             return (
                 <React.Fragment>
@@ -46,33 +46,19 @@ class User extends Component {
                                 <p>Retour aux utilisateurs</p>
                             </Link>
                         </div>
-                        <div>
-
-                        </div>
                         <div className="container__login container__user">
                             <div className="container__infos__user">
                                 <h2 aria-level="2">{user.name}</h2>
-                                <div className="users__img">{user.avatar ? <Image img={"/users/" + user.avatar} width={300} height={225} alt={"Photo de profil de " + user.name} /> : <Image img={"/users/default.png"} width={300} height={225} alt={"Photo de profil par défault"} />}</div>
-                                <p>{user.userId}</p>
+                                <div className="users__img">{user.avatar ? <Image img={"/users/" + user.avatar} width={300} height={225} alt={"Photo de profil de " + user.name} /> : <Image img={"/users/avatar2.png"} width={300} height={225} alt={"Photo de profil par défault"} />}</div>
                             </div>
                             <div className="container__catches__user">
                                 <section>
-                                    <h3 className="section_subtitle">Toutes les captures de {user.name}</h3>
-                                    <ul className="list">
+                                    <h3 aria-level="3">Toutes les captures de {user.name}</h3>
+                                    <ul>
                                         {birds.map(bird => (
-                                            <li key={bird.id} className="list__item">
-                                                <Link to={{pathname: '/captures/' + bird.id}}><span>Voir</span>
-                                                    <p>{bird.name}</p>
-                                                </Link>
-                                                <Link to={{pathname: '/captures/' + bird.id}}
-                                                      className="icon"><span>Modifier</span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                         viewBox="0 0 24 24" fill="none" stroke="#606a73"
-                                                         strokeWidth="1.5"
-                                                         strokeLinecap="round" strokeLinejoin="round">
-                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                                        <circle cx="12" cy="12" r="3"></circle>
-                                                    </svg>
+                                            <li key={bird.id}>
+                                                <Link className="link__back" to={{pathname: '/captures/' + bird.id}}>
+                                                    <p>Voir {bird.name}</p>
                                                 </Link>
                                             </li>
                                         ))}
@@ -82,12 +68,12 @@ class User extends Component {
                                     </ul>
                                 </section>
                                 <section>
-                                    <h3 className="section_subtitle">Tous les sites de {user.name}</h3>
-                                    <ul className="list">
+                                    <h3 aria-level="3">Tous les sites de {user.name}</h3>
+                                    <ul>
                                         {sites.map(site => (
-                                            <li key={site.id} className="list__item">
+                                            <li key={site.id}>
                                                 <p>{site.name}</p>
-                                                <ul className="list__details">
+                                                <ul>
                                                     <li>latitude&nbsp;: {site.geopoint.latitude}</li>
                                                     <li>longitude&nbsp;: {site.geopoint.longitude}</li>
                                                     <li>{site.superficie} km</li>

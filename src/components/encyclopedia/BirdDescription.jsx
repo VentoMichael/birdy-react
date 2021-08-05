@@ -28,7 +28,7 @@ class BirdDescription extends Component {
                         </Link>
                     </div>
                     <section>
-                        <h2 className="name__of__bird">
+                        <h2 aria-level="2" className="name__of__bird">
                             {this.state.bird.name}
                             <span className="latin__name__of__bird">
                                  ({this.state.bird.latin})

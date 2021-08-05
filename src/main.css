@@ -244,6 +244,25 @@ h3{
     display: flex;
     flex-direction: column;
 }
+.container__form_edition_bird{
+    display: flex;
+    flex-direction: column;
+}
+.container__form_edition_bird input,.container__form_edition_bird select{
+    width: 100%;
+    padding: 7px 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.container__input__edition{
+    position: relative;
+}
+.container__form_edition_bird span{
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    margin-top: -12.8px;
+}
 .input{
     box-sizing: border-box;
     width: 100%;
@@ -316,4 +335,24 @@ h3{
 .users__img .bird__image{
     max-width: 150px;
     max-height: 300px;
+}
+.feedback__container{
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+}
+div .container__catch__infos{
+    grid-gap: 10px;
+}
+.catch__name,.list__catch_edit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.general__infos_catch{
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+.list__new__catches li:last-child{
+    margin-bottom: 30px;
 }
