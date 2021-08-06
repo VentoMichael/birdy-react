@@ -5,24 +5,107 @@ import {Redirect} from "react-router-dom";
 class EditCapture extends Component {
 
     state = {
-        capture: {},
-        reprise: '',
-        latin: '',
-        type: '',
+        id: '',
         date: '',
         place: '',
+        latin: '',
+        size: '',
+        reprise: '',
+        type: '',
         name: '',
         number: '',
-        size: '',
+        capture: {},
         weight: '',
-        adiposity: '',
         sexe: '',
         age: '',
-        id: '',
+        adiposity: '',
         loading: false,
         empty: false,
         succes: false,
         uid: firebase.auth().currentUser.uid
+    };
+
+    componentDidMount() {
+        const ref = firebase.firestore().collection('catches').doc(this.props.match.params.id);
+        ref.get().then((doc) => {
+            this.setState({
+                id: doc.id,
+                capture: doc.data(),
+                loading: true
+            });
+            const latin = this.state.capture.latin;
+            this.setState({latin: latin});
+            const poids = this.state.capture.weight;
+            this.setState({weight: poids});
+            const longueur = this.state.capture.size;
+            this.setState({size: longueur});
+            const type = this.state.capture.type;
+            this.setState({type: type});
+            const date = this.state.capture.date;
+            this.setState({date: date});
+            const reprise = this.state.capture.reprise;
+            this.setState({reprise: reprise});
+            const sexe = this.state.capture.sexe;
+            this.setState({sexe: sexe});
+            const age = this.state.capture.age;
+            this.setState({age: age});
+            const lieu = this.state.capture.place;
+            this.setState({place: lieu});
+            const nom = this.state.capture.name;
+            this.setState({name: nom});
+            const numero = this.state.capture.number;
+            this.setState({number: numero});
+            const adiposite = this.state.capture.adiposity;
+            this.setState({adiposity: adiposite});
+        });
+    };
+
+    handleName = (e) => {
+        this.setState({name: e.target.value});
+    };
+
+    handleLatin = (e) => {
+        this.setState({latin: e.target.value});
+    };
+
+    handleType = (e) => {
+        this.setState({type: e.target.value});
+    };
+
+    handlePlace = (e) => {
+        this.setState({place: e.target.value});
+    };
+
+    handleReprise = (e) => {
+        this.setState({reprise: e.target.value});
+    };
+
+    handleDate = (e) => {
+        this.setState({date: e.target.value});
+    };
+
+    handleNum = (e) => {
+        this.setState({number: e.target.value});
+    };
+
+    handleAdiposity = (e) => {
+        this.setState({adiposity: e.target.value});
+    };
+
+    handleSize = (e) => {
+        this.setState({size: e.target.value});
+    };
+
+    handleWeight = (e) => {
+        this.setState({weight: e.target.value});
+    };
+
+    handleAge = (e) => {
+        this.setState({age: e.target.value});
+    };
+
+    handleSexe = (e) => {
+        this.setState({sexe: e.target.value});
     };
 
     saveChange = (e) => {

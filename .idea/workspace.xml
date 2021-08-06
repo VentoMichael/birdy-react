@@ -4,11 +4,7 @@
     <list default="true" id="17828cd5-a385-432b-b5c3-1b610e6645b4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/captures/CaptureList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/CaptureList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/captures/NewCapture.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/NewCapture.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/encyclopedia/BirdDescription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/encyclopedia/BirdDescription.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/UsersList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/UsersList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/captures/EditCapture.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/EditCapture.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +73,7 @@
       <workItem from="1624631781486" duration="1624000" />
       <workItem from="1624731707411" duration="27424000" />
       <workItem from="1627287978261" duration="5450000" />
-      <workItem from="1627300144895" duration="100686000" />
+      <workItem from="1627300144895" duration="101204000" />
     </task>
     <servers />
   </component>
