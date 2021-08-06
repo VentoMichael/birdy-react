@@ -60,7 +60,6 @@ const NewCapture = () => {
             const lat = input.value;
             setLatitude(parseFloat(lat))
         }
-
     };
     const saveNewBird = (e) => {
         e.preventDefault();
