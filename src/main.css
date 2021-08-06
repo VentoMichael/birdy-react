@@ -320,17 +320,26 @@ h3{
     margin: auto;
     text-align: center;
 }
-.bird__image{
-    width: auto;
-    height: auto;
-    max-width: 500px;
-    max-height: 300px;
-}
 .encyclopedia__bird_picture .bird__image{
     width: auto;
     height: auto;
     max-width: 250px;
     max-height: 250px;
+}
+
+li .encyclopedia__bird_picture .bird__image{
+    width: 300px;
+    height: 250px;
+    max-width: inherit;
+    max-height: inherit;
+    object-fit: cover;
+}
+div .users__img .bird__image{
+    width: 200px;
+    height: 200px;
+    max-width: inherit;
+    max-height: inherit;
+    object-fit: cover;
 }
 .users__img .bird__image{
     max-width: 150px;
@@ -353,6 +362,20 @@ div .container__catch__infos{
     margin-bottom: 30px;
     margin-top: 10px;
 }
-.list__new__catches li:last-child{
-    margin-bottom: 30px;
+.list__new__catches div:last-child{
+    margin: 20px 0 30px;
+}
+.latin__name__of__bird{
+    margin-left:10px;
+}
+.ency__single__bird{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+img{
+    border-radius: 5px;
+}
+.list__new__catches div.list__catch_edit{
+    margin: 0;
 }
