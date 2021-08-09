@@ -54,15 +54,15 @@ class BirdDescription extends Component {
                                 <div className="grid__parent__characteristic">
                                     <section className="grid__child__characteristic">
                                         <h4 aria-level="4">Poids</h4>
-                                        <p>{this.state.bird.weight} g</p>
+                                        <p>{this.state.bird.weight} <abbr title="grammes">g</abbr></p>
                                     </section>
                                     <section className="grid__child__characteristic">
                                         <h4 aria-level="4">Taille</h4>
-                                        <p>{this.state.bird.height} cm</p>
+                                        <p>{this.state.bird.height} <abbr title="centimètre">cm</abbr></p>
                                     </section>
                                     <section className="grid__child__characteristic">
                                         <h4 aria-level="4">Envergure</h4>
-                                        <p>{this.state.bird.envergure} cm</p>
+                                        <p>{this.state.bird.envergure} <abbr title="centimètre">cm</abbr></p>
                                     </section>
                                     <section className="grid__child__characteristic">
                                         <h4 aria-level="4">Famille</h4>

@@ -13,6 +13,8 @@ import {AuthProvider} from '../context/Auth.jsx';
 import NewCapture from './captures/NewCapture';
 import Capture from './captures/Capture';
 import CaptureEdit from './captures/EditCapture'
+import SitesList from './sites/SitesList'
+import NewSite from './sites/NewSite'
 
 export class Content extends React.Component {
     render() {
@@ -24,6 +26,8 @@ export class Content extends React.Component {
                     <PrivateRoute path="/home" component={Home}/>
                     <PrivateRoute path='/users/:id' component={User}/>
                     <PrivateRoute path="/users" component={UserList}/>
+                    <PrivateRoute path='/sites/new' component={NewSite}/>
+                    <PrivateRoute path='/sites' component={SitesList}/>
                     <PrivateRoute path='/captures/:id' component={Capture}/>
                     <PrivateRoute path='/edit/:id' component={CaptureEdit}/>
                     <PrivateRoute path="/captures" component={CaptureList}/>

@@ -98,6 +98,9 @@ const NewCapture = () => {
         <React.Fragment>
             <section>
                 <h2 aria-level="2">Enregistrement d'une nouvelle capture</h2>
+                {empty === true &&
+                <p className="errors">Tous les champs doivent être remplis</p>
+                }
                 <form action="#" method="POST" className="container__login" onSubmit={saveNewBird}>
                     <div>
                         <fieldset>
@@ -170,14 +173,14 @@ const NewCapture = () => {
                         <label htmlFor="size">Longueur alaire</label>
                         <div className="container__input__edition">
                             <input onChange={(e) => setSize(e.target.value)} type="number"
-                                   id="size" name="size" placeholder="7"/> <span>cm</span>
+                                   id="size" name="size" placeholder="7"/> <span><abbr title="centimètre">cm</abbr></span>
                         </div>
                     </div>
                     <div className="container__form_edition_bird">
                         <label htmlFor="weight">Poids</label>
                         <div className="container__input__edition">
                             <input onChange={(e) => setWeight(e.target.value)}
-                                   type="number" id="weight" name="weight" placeholder="59"/> <span>grammes</span>
+                                   type="number" id="weight" name="weight" placeholder="59"/> <span><abbr title="grammes">g</abbr></span>
                         </div>
                     </div>
                     <div>
@@ -240,9 +243,7 @@ const NewCapture = () => {
                             </div>
                         </fieldset>
                     </div>
-                    {empty === true &&
-                    <p className="errors">Tous les champs doivent être remplis</p>
-                    }
+
                     <div>
                         <button className="btn">Enregistrer</button>
                     </div>

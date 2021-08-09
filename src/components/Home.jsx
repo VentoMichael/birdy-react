@@ -42,7 +42,6 @@ const Home = () => {
     if (isLogged === false) {
         return <Redirect to='/'/>
     }
-    console.log(currentUser)
     return (
         <React.Fragment>
             <section>

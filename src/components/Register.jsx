@@ -88,18 +88,17 @@ const Register = () => {
             <section>
                 <div className="form__container">
                     <h2 aria-level="2" className="title__login">Formulaire d'inscription</h2>
-                    <form action="#" method="POST" className="form form__login" onSubmit={createUser}>
-                        <div className="container__login">
-                            <div className="form__control">
-                                <label className="label" htmlFor="name">Nom</label>
-                                <input className="input" type="text" name="name" id="name" placeholder="Marco Polo"
+                    <form action="#" method="POST" className="form container__login form_register" onSubmit={createUser}>
+                            <div className='container__form_edition_bird'>
+                                <label htmlFor="name">Nom</label>
+                                <input type="text" name="name" id="name" placeholder="Marco Polo"
                                        ref={userName}/>
                             </div>
 
-                            <div className="form__control">
-                                <label className="label" htmlFor="userId">ID fourni par l'institut des Sciences
+                            <div className='container__form_edition_bird'>
+                                <label htmlFor="userId">ID fourni par l'institut des Sciences
                                     Naturelles</label>
-                                <input className="input" type="text" name="userId" id="userId" placeholder="1234AB"
+                                <input type="text" name="userId" id="userId" placeholder="1234AB"
                                        ref={userId}/>
                                 {idScience === true &&
                                 <p className="errors">Oops! L' identifiant n’est pas valide! (4 lettres et 2 chiffres)
@@ -107,11 +106,9 @@ const Register = () => {
                                 }
                             </div>
 
-                        </div>
-                        <div className="container__login">
-                            <div className="form__control">
-                                <label className="label" htmlFor="email">E-mail</label>
-                                <input className="input" type="email" name="email" id="email"
+                            <div className='container__form_edition_bird'>
+                                <label htmlFor="email">E-mail</label>
+                                <input type="email" name="email" id="email"
                                        placeholder="marcopolo@email.com" ref={userMail}/>
                                 {emailError === true &&
                                 <p className="errors">Veuillez entrer une adresse mail valide</p>
@@ -122,10 +119,10 @@ const Register = () => {
                                 }
                             </div>
 
-                            <div className="form__control password__input">
+                            <div className="container__form_edition_bird password__input">
 
-                                <label className="label" htmlFor="password">Mot de passe</label>
-                                <input className="input" type="password" name="password" id="password"
+                                <label htmlFor="password">Mot de passe</label>
+                                <input type="password" name="password" id="password"
                                        ref={userPassword}/>
                                 <button className="show__pass" type="button" onClick={showPassword}>
                                     <span className="hidden">Montrer le mot de passe</span>
@@ -140,8 +137,7 @@ const Register = () => {
                                 <p className="errors">Le mot de passe doit avoir 6 caractères minimum</p>
                                 }
                             </div>
-                        </div>
-                        <div className="form__control">
+                        <div>
                             <button type="submit" className="btn">S'inscrire</button>
                         </div>
                         {emptyField === true &&

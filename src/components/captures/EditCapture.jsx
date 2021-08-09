@@ -198,7 +198,7 @@ class EditCapture extends Component {
                                 <div className="container__input__edition">
                                     <input onChange={this.handleSize} className="form__input_small" type="number"
                                            id="size" name="size" defaultValue={this.state.capture.size}/>
-                                    <span>centimètres</span>
+                                    <span><abbr title="centimètre">cm</abbr></span>
                                 </div>
                             </div>
                             <div className="container__form_edition_bird">
@@ -206,7 +206,7 @@ class EditCapture extends Component {
                                 <div className="container__input__edition">
                                     <input onChange={this.handleWeight} className="form__input_small" type="number"
                                            id="weight" name="weight" defaultValue={this.state.capture.weight}/>
-                                    <span>grammes</span>
+                                    <span><abbr title="grammes">g</abbr></span>
                                 </div>
                             </div>
                             <div className="container__form_edition_bird">
@@ -225,7 +225,7 @@ class EditCapture extends Component {
                                         <option defaultValue="5">5
                                         </option>
                                     </select>
-                                    <span>couche de graisse</span>
+                                    <span>couche(s) de graisse</span>
                                 </div>
                             </div>
                             <div className="container__form_edition_bird">
