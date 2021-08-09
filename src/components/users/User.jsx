@@ -54,12 +54,11 @@ class User extends Component {
                             <div className="container__catches__user">
                                 <section>
                                     <h3 aria-level="3">Toutes les captures de {user.name}</h3>
-                                    <ul>
+                                    <ul className="container__listes__users">
                                         {birds.map(bird => (
                                             <li key={bird.id}>
-                                                <Link className="link__back" to={{pathname: '/captures/' + bird.id}}>
-                                                    <p>Voir {bird.name}</p>
-                                                </Link>
+                                                <Link className="link__back" to={{pathname: '/captures/' + bird.id}}>Voir {bird.name}</Link>
+                                                <p></p>
                                             </li>
                                         ))}
                                         {birds.length === 0 &&
@@ -69,14 +68,14 @@ class User extends Component {
                                 </section>
                                 <section>
                                     <h3 aria-level="3">Tous les sites de {user.name}</h3>
-                                    <ul>
+                                    <ul className="container__listes__users">
                                         {sites.map(site => (
                                             <li key={site.id}>
                                                 <p>{site.name}</p>
                                                 <ul>
-                                                    <li>latitude&nbsp;: {site.geopoint.latitude}</li>
-                                                    <li>longitude&nbsp;: {site.geopoint.longitude}</li>
-                                                    <li>{site.superficie} km</li>
+                                                    <li>La latitude: {site.geopoint.latitude}</li>
+                                                    <li>La longitude: {site.geopoint.longitude}</li>
+                                                    <li>La superficie {site.superficie} <abbr title="kilometres">km</abbr></li>
                                                 </ul>
 
                                             </li>

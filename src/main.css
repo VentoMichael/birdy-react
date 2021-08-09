@@ -224,7 +224,7 @@ h3{
     right: 0;
     border: 1px solid black;
     background: transparent;
-    height: 30px;
+    height: 31px;
     border-radius: 5px;
     width: 50px;
 }
@@ -362,6 +362,10 @@ div .container__catch__infos{
     margin-bottom: 30px;
     margin-top: 10px;
 }
+.container__listes__users {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
 .list__new__catches div:last-child{
     margin: 20px 0 30px;
 }
@@ -376,6 +380,13 @@ div .container__catch__infos{
 img{
     border-radius: 5px;
 }
+.form_register div{
+    display:flex;
+    flex-direction: column;
+}
 .list__new__catches div.list__catch_edit{
     margin: 0;
+}
+.container__listes > div:nth-of-type(1) > div:nth-of-type(1){
+    height: 300px;
 }
