@@ -26,15 +26,19 @@ class Capture extends Component {
         if (this.state.loading === false) {
             return <Redirect to={"/captures/" + this.props.match.params.id}/>
         }
+        let user = firebase.auth().currentUser;
         return (
             <React.Fragment>
                 <section>
                     <div className="catch__name">
                         <h2 aria-level="2">{this.state.capture.name}</h2>
+                        {user.uid === this.state.capture.userUid &&
                         <div>
                             <Link className="link__back" to={{pathname: '/edit/' + this.props.match.params.id}}>Modifier {this.state.capture.name}
                             </Link>
                         </div>
+                        }
+
                     </div>
                     <section className='general__infos_catch'>
                         <h3 aria-level="3">Informations générales</h3>
