@@ -25,6 +25,9 @@ class Nav extends Component {
                         <Link to='/captures' className="nav__link">
                             <p>Mes captures</p>
                         </Link>
+                        <Link to='/sites' className="nav__link">
+                            <p>Sites de capture</p>
+                        </Link>
                     </div>
                 </div>
             </React.Fragment>
