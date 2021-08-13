@@ -5,11 +5,10 @@ import {AuthContext} from '../../context/Auth.jsx';
 
 class Capture extends Component {
     state = {
-        capture: {},
         id: '',
+        capture: {},
         loading: false,
     };
-
     componentDidMount() {
         const ref = firebase.firestore().collection('catches').doc(this.props.match.params.id);
         ref.get().then((doc) => {
@@ -20,9 +19,7 @@ class Capture extends Component {
             });
         });
     }
-
     render() {
-
         if (this.state.loading === false) {
             return <Redirect to={"/captures/" + this.props.match.params.id}/>
         }
@@ -38,7 +35,6 @@ class Capture extends Component {
                             </Link>
                         </div>
                         }
-
                     </div>
                     <section className='general__infos_catch'>
                         <h3 aria-level="3">Informations générales</h3>

@@ -134,11 +134,8 @@ class EditCapture extends Component {
             );
             this.setState({succes: true});
         }
-
     };
-
     render() {
-
         if (this.state.succes === true) {
             return <Redirect to={{pathname: '/captures/' + this.props.match.params.id}}/>
         }

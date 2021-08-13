@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect,useContext} from 'react';
 import {Link, Redirect} from "react-router-dom";
 import firebase from '../../config/config.jsx';
 import Image from '../common/Image.jsx';
+import {AuthContext} from '../../context/Auth.jsx';
 
 const UserList = () => {
     const [leState, setleState] = useState([]);
-    const [isLogged, setisLogged] = useState([]);
+    const {currentUser} = useContext(AuthContext);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -15,16 +16,6 @@ const UserList = () => {
         };
         fetchData();
     }, []);
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            setisLogged(true);
-        } else {
-            setisLogged(false);
-        }
-    });
-    if (isLogged === false) {
-        return <Redirect to='/'/>
-    }
     return (
         <React.Fragment>
             <section>
@@ -33,7 +24,7 @@ const UserList = () => {
                     <ul className="container__login container__users">
                         {leState.map(user => (
                             <li key={user.id} className="list__item">
-                                <h3 aria-level="3">{user.name}</h3>
+                                <h3 aria-level="3">{user.id === currentUser.uid ? 'Moi' : user.name}</h3>
                                 <div className="ency__definition">
                                     <div className="users__img">
                                         {user.avatar ? 
@@ -42,7 +33,7 @@ const UserList = () => {
                                     </div>
                                 </div>
                                 <Link to={{pathname: '/users/' + user.id}} className="link__back">
-                                    <span>Plus d'informations sur {user.name}</span></Link>
+                                    <span>{user.id === currentUser.uid ? 'Mes informations' : 'Plus d\'informations sur ' + user.name}</span></Link>
                             </li>
                         ))}
                     </ul>

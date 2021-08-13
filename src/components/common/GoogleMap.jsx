@@ -21,7 +21,6 @@ export class MapContainer extends Component{
         maxWidth: '300px',
         maxHeight: '300px',
     }
-
     render(){
         return (
             <Fragment>

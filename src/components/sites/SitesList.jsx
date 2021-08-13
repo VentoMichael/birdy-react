@@ -17,7 +17,7 @@ const SiteList = (props) => {
                 setLong(position.coords.longitude);
             });
         } else {
-            alert("Geolocation is not supported by this browser.");
+            alert("La géolocalisation n'est pas prise en charge par ce navigateur.");
         }
 
         const fetchData = async () => {
@@ -66,5 +66,5 @@ const SiteList = (props) => {
     )
 };
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyBLbc_IMKUfMTdokXqOWLMCXErOUJTwhX4'
+    apiKey: process.env.GOOGLE_MAP_API
 })(SiteList);

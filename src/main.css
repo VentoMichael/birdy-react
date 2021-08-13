@@ -85,6 +85,7 @@ table {
 
 svg {
     width: 50px;
+    height: 50px;
 }
 .logo{
     font-family: 'balooB',sans-serif;
@@ -234,7 +235,7 @@ h3{
 .password__input{
     position: relative;
 }
-.container__login,.grid__parent__characteristic{
+.container__login,.grid__parent__characteristic,.list__birds_home{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 50px;
@@ -364,7 +365,13 @@ div .container__catch__infos{
 }
 .container__listes__users {
     list-style-type: decimal;
-    margin-left: 20px;
+}
+.btn__catch{
+    padding: 5px;
+    align-self: center;
+    width: inherit;
+    height: inherit;
+    margin-top: 20px;
 }
 .list__new__catches div:last-child{
     margin: 20px 0 30px;
@@ -380,7 +387,7 @@ div .container__catch__infos{
 img{
     border-radius: 5px;
 }
-.form_register div{
+.form_register div,.list__bird_home,.form__control.container__catches_home{
     display:flex;
     flex-direction: column;
 }

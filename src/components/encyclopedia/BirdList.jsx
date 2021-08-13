@@ -52,5 +52,4 @@ const BirdList = () => {
         </React.Fragment>
     )
 };
-
 export default BirdList;

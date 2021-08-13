@@ -48,7 +48,6 @@ const NewCapture = () => {
             const long = input.value;
             setLatitude(parseFloat(long))
         }
-
     };
     const handleLat = ({currentTarget: input}) => {
         if (navigator.geolocation) {
@@ -86,11 +85,10 @@ const NewCapture = () => {
                 setSucces(true);
             }).catch(function (error) {
                 setSucces(false);
-                console.error("Error adding document: ", error);
+                console.error("Erreur d'ajout de document : ", error);
             });
         }
     };
-
     if (succes === true) {
         return <Feedback/>
     }
@@ -140,24 +138,14 @@ const NewCapture = () => {
                         </fieldset>
                     </div>
                     <div className="container__form_edition_bird">
-                        <label htmlFor="date">Quand a-t-il été capturé&nbsp;?</label>
-                        <input onChange={(e) => setDate(e.target.value)} type="date" id="date"
-                               name="date"/>
-                    </div>
-                    <div className="container__form_edition_bird">
                         <label htmlFor="where">Où a-t-il été capturé&nbsp;?</label>
                         <input onChange={(e) => setPlace(e.target.value)} type="text" id="where"
                                name="where" placeholder="Liège"/>
                     </div>
                     <div className="container__form_edition_bird">
-                        <label className="" htmlFor="longitude">Longitude&nbsp;:</label>
-                        <input onChange={handleLong} type="number" step="0.01" min="-180"
-                               max="180" id="longitude" name="longitude" placeholder="55.6"/>
-                    </div>
-                    <div className="container__form_edition_bird">
-                        <label className="" htmlFor="latitude">Latitude&nbsp;:</label>
-                        <input onChange={handleLat} type="number" step="0.01" min="-90"
-                               max="90" id="latitude" name="latitude" placeholder="4.56"/>
+                        <label htmlFor="date">Quand a-t-il été capturé&nbsp;?</label>
+                        <input onChange={(e) => setDate(e.target.value)} type="date" id="date"
+                               name="date"/>
                     </div>
                     <div className="container__form_edition_bird">
                         <label htmlFor="birdName">De quel oiseaux s'agit-il&nbsp;?</label>
@@ -243,7 +231,16 @@ const NewCapture = () => {
                             </div>
                         </fieldset>
                     </div>
-
+                    <div className="container__form_edition_bird">
+                        <label className="" htmlFor="longitude">Longitude&nbsp;:</label>
+                        <input onChange={handleLong} type="number" step="0.01" min="-180"
+                               max="180" id="longitude" name="longitude" placeholder="55.6"/>
+                    </div>
+                    <div className="container__form_edition_bird">
+                        <label className="" htmlFor="latitude">Latitude&nbsp;:</label>
+                        <input onChange={handleLat} type="number" step="0.01" min="-90"
+                               max="90" id="latitude" name="latitude" placeholder="4.56"/>
+                    </div>
                     <div>
                         <button className="btn">Enregistrer</button>
                     </div>

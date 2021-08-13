@@ -3,7 +3,7 @@ import {Switch, Route} from 'react-router-dom';
 import Login from './Login.jsx';
 import Register from './Register.jsx';
 import Home from './Home.jsx';
-import PrivateRoute from "../utils/PrivateRoute.js";
+import PrivateRoute from "../utils/PrivateRoute.jsx";
 import UserList from './users/UsersList.jsx';
 import User from './users/User.jsx';
 import BirdList from './encyclopedia/BirdList.jsx';
