@@ -2,23 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17828cd5-a385-432b-b5c3-1b610e6645b4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Content.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/captures/Capture.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/Capture.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/captures/CaptureList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/CaptureList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/captures/EditCapture.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/EditCapture.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/captures/NewCapture.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/NewCapture.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Audio.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Audio.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Feedback.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Feedback.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/GoogleMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/GoogleMap.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/encyclopedia/BirdDescription.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/encyclopedia/BirdDescription.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/encyclopedia/BirdList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/encyclopedia/BirdList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sites/NewSite.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sites/NewSite.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sites/SitesList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sites/SitesList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/User.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/UsersList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/UsersList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/PrivateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/PrivateRoute.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +92,7 @@
       <workItem from="1627287978261" duration="5450000" />
       <workItem from="1627300144895" duration="103672000" />
       <workItem from="1628415291989" duration="21600000" />
-      <workItem from="1628877665740" duration="4184000" />
+      <workItem from="1628877665740" duration="14443000" />
     </task>
     <servers />
   </component>
@@ -107,5 +110,17 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/users/User.jsx</url>
+          <line>26</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -5,7 +5,6 @@ import {AuthContext} from '../../context/Auth.jsx';
 
 const CaptureList = () => {
     const [leState, setleState] = useState(null);
-    const [isLogged, setisLogged] = useState([]);
     const {currentUser} = useContext(AuthContext);
     useEffect(() => {
         const fetchData = async () => {
@@ -16,16 +15,6 @@ const CaptureList = () => {
 
         fetchData();
     }, []);
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (currentUser) {
-            setisLogged(true);
-        } else {
-            setisLogged(false);
-        }
-    });
-    if (isLogged === false) {
-        return <Redirect to='/'/>
-    }
     if (leState === null) {
         return <Redirect to='/captures'/>
     }
@@ -39,10 +28,12 @@ const CaptureList = () => {
                             <div key={bird.id}>
                                 <h3 aria-level="3">{bird.name}</h3>
                                 <div className="list__catch_edit">
-                                    <Link className="link__back" to={{pathname: '/captures/' + bird.id}}>Plus
-                                        d'informations sur {bird.name}</Link>
-                                    <Link className="link__back"
-                                          to={{pathname: '/edit/' + bird.id}}>Modifier {bird.name}
+                                    <Link className="btn__link__back" to={{pathname: '/captures/' + bird.id}}>
+                                        <span>Plus
+                                        d'informations sur {bird.name}</span></Link>
+                                    <Link className="btn__link__back"
+                                          to={{pathname: '/edit/' + bird.id}}>
+                                        <span>Modifier {bird.name}</span>
                                     </Link>
                                 </div>
                             </div>
@@ -54,8 +45,9 @@ const CaptureList = () => {
                     <h3 aria-level="3">
                         Ajout d'une capture
                     </h3>
-                    <Link to='/capture/new' className="link__back link__add__new_catch">Ajouter une nouvelle
-                        capture</Link>
+                    <Link to='/capture/new' className="btn__link__back">
+                        <span>Ajouter une nouvelle
+                        capture</span></Link>
                 </section>
             </section>
 

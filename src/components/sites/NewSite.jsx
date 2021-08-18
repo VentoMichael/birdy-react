@@ -85,7 +85,7 @@ const NewSite = () => {
                         <input onChange={(e) => setSuperficie(e.target.value)} type="number" id="superficie" name="superficie" placeholder="30"/>
                     </div>
                     <div>
-                        <button className="btn">Enregistrer</button>
+                        <button className="btn__link__back"><span>Enregistrer</span></button>
                     </div>
                 </form>
             </section>

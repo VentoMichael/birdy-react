@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Redirect, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import firebase from '../../config/config.jsx';
 import GMap from '../common/GoogleMap.jsx';
 import Image from '../common/Image.jsx';
@@ -22,7 +22,7 @@ class BirdDescription extends Component {
         return (
             <React.Fragment>
                 <div>
-                    <Link to="/encyclopedia" className="link__back">
+                    <Link to="/encyclopedia" className="btn__link__back btn__link__previous">
                         <p>Retour à l'encyclopédie</p>
                     </Link>
                 </div>
@@ -33,7 +33,7 @@ class BirdDescription extends Component {
                                  ({this.state.bird.latin})
                             </span>
                     </h2>
-                    <div className="ency__single__bird">
+                    <div className="ency__single__bird encyclopedia__bird_picture">
                         {this.state.bird.img ?
                             <Image img={"/encyclopedia/birds/" + this.state.bird.img} width={300} height={225}
                                    alt={"Photo de profil de " + this.state.bird.name}/> : "Aucune photo d'oiseau"}
@@ -82,7 +82,7 @@ class BirdDescription extends Component {
                             <h3 aria-level="3">Alimentation</h3>
                             <p>
                                 {this.state.bird.alimentation ? this.state.bird.alimentation.map((item, id) =>
-                                    <p key={id}>{item},</p>
+                                    <span key={id}>{item}, </span>
                                 ) : '/'}
                             </p>
                         </section>

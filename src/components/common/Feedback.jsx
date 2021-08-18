@@ -15,10 +15,15 @@ class Feedback extends Component {
                         </svg>
                         <p>L'oiseau a bien été ajouté à votre liste d'oiseaux capturés&nbsp;!</p>
                     </div>
-                    <p>N'hésitez pas à encodez un autre oiseau</p>
                 </div>
-                <div>
-                    <Link className="link__back" to={'/home'}>Retourner à la page d'accueil</Link>
+                <div className="container__feedback">
+                    <Link to={'/home'} className="btn__link__back">
+                        <span>
+                            Retourner à la page d'accueil
+                        </span>
+                    </Link>
+                    <Link to={'/captures'}
+                          className="btn__link__back"><span>Voir toutes mes captures</span></Link>
                 </div>
             </div>
         );

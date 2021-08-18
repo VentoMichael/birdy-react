@@ -5,7 +5,6 @@ import Image from '../common/Image.jsx';
 
 const BirdList = () => {
     const [leState, setleState] = useState(null);
-    const [isLogged, setisLogged] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             const db = firebase.firestore();
@@ -14,16 +13,6 @@ const BirdList = () => {
         };
         fetchData();
     }, []);
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            setisLogged(true);
-        } else {
-            setisLogged(false);
-        }
-    });
-    if (isLogged === false) {
-        return <Redirect to='/'/>
-    }
     if (leState === null) {
         return <Redirect to='/encyclopedia'/>
     }
@@ -39,7 +28,7 @@ const BirdList = () => {
                                     {bird.name}
                                 </h3>
                                 <div className="encyclopedia__bird_picture">{bird.img ? <Image img={"/encyclopedia/birds/" + bird.img} width={300} height={225} alt={"Photo de profil de " + bird.name} /> : "Aucune photo d'oiseau"}</div>
-                                <Link to={{pathname: '/encyclopedia/' + bird.id}} className="link__back">
+                                <Link to={{pathname: '/encyclopedia/' + bird.id}} className="btn__link__back">
                                     <span>
                                         Accéder aux informations de {bird.name}
                                     </span>

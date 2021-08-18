@@ -3,7 +3,6 @@ import {Redirect, Link} from 'react-router-dom';
 import firebase from '../config/config.jsx';
 import {AuthContext} from '../context/Auth.jsx';
 
-
 const Login = () => {
     const [isLogged, setisLogged] = useState(false);
     const [error, setError] = useState(false);
@@ -32,7 +31,6 @@ const Login = () => {
             }
         })
     }, []);
-    const {currentUser} = useContext(AuthContext);
     if (isLogged === true) {
         return <Redirect to='/home'/>
     }
@@ -57,7 +55,7 @@ const Login = () => {
                         <p className="errors">Mail ou mot de passe incorrect&nbsp;!</p>
                         }
                         <div className="form__control">
-                            <button type="submit" className="btn">Se connecter</button>
+                            <button type="submit" className="btn__link__back"><span>Se connecter</span></button>
                         </div>
                     </form>
                     <div>

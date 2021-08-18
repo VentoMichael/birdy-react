@@ -173,7 +173,7 @@ const NewCapture = () => {
                     </div>
                     <div>
                         <fieldset>
-                            <legend>quel est l'adiposité de l'oiseaux&nbsp;?</legend>
+                            <legend>Quel est l'adiposité de l'oiseaux&nbsp;?</legend>
                             <div className="container__input__edition">
                                 <div>
                                     <input type="radio" id="one" name="adiposity" value="1" onChange={handleAdiposity}/>
@@ -242,7 +242,7 @@ const NewCapture = () => {
                                max="90" id="latitude" name="latitude" placeholder="4.56"/>
                     </div>
                     <div>
-                        <button className="btn">Enregistrer</button>
+                        <button className="btn__link__back"><span>Enregistrer</span></button>
                     </div>
                 </form>
             </section>

@@ -246,7 +246,7 @@ class EditCapture extends Component {
                             <p className="errors">Tous les champs doivent être remplis</p>
                             }
                             <div>
-                                <button className="btn">Sauvegarder</button>
+                                <button className="btn__link__back"><span>Sauvegarder</span></button>
                             </div>
                         </form>
                     </section>

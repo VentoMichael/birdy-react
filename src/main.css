@@ -108,6 +108,11 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
 }
+.container__login button{
+    font-family: "open", Arial, sans-serif;
+    font-size: 1em;
+    padding: 10px 12px;
+}
 header{
     margin-top: 100px;
 }
@@ -238,7 +243,7 @@ h3{
 .container__login,.grid__parent__characteristic,.list__birds_home{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
+    grid-gap: 35px;
     margin-bottom: 10px;
 }
 .container__login .form__control{
@@ -283,10 +288,46 @@ h3{
     cursor: pointer;
     transition: .3s;
 }
-.btn:hover{
+.btn:hover,.btn__link__back:hover{
     background: #0367A6;
     color: white;
-    border-color: black;
+    border: 1px solid #0367A6;
+}
+.btn__link__back:hover:after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -10px;
+    transition: .3s;
+    background-image: url("svg/next.svg");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.btn__link__back:hover > span{
+    margin-right: 15px;
+    transition: .3s;
+}
+a.btn__link__previous:hover:after{
+    background-image: url("svg/left-arrow.svg");
+    right: inherit;
+    left: 0;
+}
+.section__header{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.container__home{
+    align-self: center;
+}
+.btn__link__back:hover > p{
+    margin-left: 15px;
+    transition: .3s;
 }
 .container__characteristic,.container__audio__bird{
     grid-column-start: 1;
@@ -301,9 +342,19 @@ h3{
     align-items: center;
     grid-gap: 10px;
 }
-.container__user{
+.container__user,.container__catches_home,.catch__container{
     display: flex;
     flex-direction: column;
+}
+.btn__back_users{
+    margin-bottom: 15px;
+}
+.container__feedback{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    grid-gap: 10px;
+    margin-top: 30px;
 }
 .container__catches__user,.container__encuclopedia{
     display: grid;
@@ -316,6 +367,13 @@ h3{
     flex-direction: column;
     align-items: center;
     grid-gap: 10px;
+}
+button{
+    font-size: 1em;
+}
+.btn__link__back.container__all_catches{
+    margin-top: 20px;
+    align-self: center;
 }
 .container__infos__user{
     margin: auto;
@@ -348,8 +406,13 @@ div .users__img .bird__image{
 }
 .feedback__container{
     display: flex;
+    flex-direction: column;
     align-items: center;
     grid-gap: 10px;
+}
+.feedback__container svg{
+    width: 150px;
+    height: 150px;
 }
 div .container__catch__infos{
     grid-gap: 10px;
@@ -373,11 +436,17 @@ div .container__catch__infos{
     height: inherit;
     margin-top: 20px;
 }
+.list__new__catches div{
+    margin: 10px 0 20px;
+}
 .list__new__catches div:last-child{
-    margin: 20px 0 30px;
+    margin-bottom: 40px;
 }
 .latin__name__of__bird{
     margin-left:10px;
+}
+.list__new__catches .btn__link__back{
+    margin-top: 0;
 }
 .ency__single__bird{
     display: flex;
@@ -396,4 +465,19 @@ img{
 }
 .container__listes > div:nth-of-type(1) > div:nth-of-type(1){
     height: 300px;
+}
+.btn__link__back{
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #0367A6;
+    border-radius: 5px;
+    background: white;
+    color: black;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: .3s;
+    position: relative;
+}
+.container__listes__users > li{
+    margin: 0 0 15px;
 }

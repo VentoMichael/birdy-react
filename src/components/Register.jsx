@@ -138,7 +138,7 @@ const Register = () => {
                                 }
                             </div>
                         <div>
-                            <button type="submit" className="btn">S'inscrire</button>
+                            <button type="submit" className="btn__link__back"><span>S'inscrire</span></button>
                         </div>
                         {emptyField === true &&
                         <p className="errors">Tous les champs doivent être remplis</p>

@@ -2,24 +2,11 @@ import React, {useState, useEffect} from 'react';
 import {Link, Redirect} from "react-router-dom";
 import firebase from '../../config/config';
 import GMap from '../common/GoogleMap.jsx';
-import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
+import {GoogleApiWrapper} from 'google-maps-react';
 
 const SiteList = (props) => {
     const [leState, setleState] = useState(null);
-    const [long, setLong] = useState(null);
-    const [lat, setLat] = useState(null);
-    const [isLogged, setisLogged] = useState([]);
-
     useEffect(() => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                setLat(position.coords.latitude);
-                setLong(position.coords.longitude);
-            });
-        } else {
-            alert("La géolocalisation n'est pas prise en charge par ce navigateur.");
-        }
-
         const fetchData = async () => {
             const db = firebase.firestore();
             const data = await db.collection('sites').get();
@@ -27,17 +14,6 @@ const SiteList = (props) => {
         };
         fetchData();
     }, []);
-
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            setisLogged(true);
-        } else {
-            setisLogged(false);
-        }
-    });
-    if (isLogged === false) {
-        return <Redirect to='/'/>
-    }
     if (leState === null) {
         return <Redirect to='/sites'/>
     }
@@ -47,7 +23,7 @@ const SiteList = (props) => {
                 <div>
                     <div className="list__catch_edit">
                         <h2>Sites de baguage</h2>
-                        <Link className="link__back" to={'/sites/new'}>Nouveau site</Link>
+                        <Link className="btn__link__back" to={'/sites/new'}><span>Nouveau site</span></Link>
                     </div>
                     <div className="container__login container__listes">
                         {leState.map(map => (
@@ -66,5 +42,5 @@ const SiteList = (props) => {
     )
 };
 export default GoogleApiWrapper({
-    apiKey: process.env.GOOGLE_MAP_API
+    apiKey: "AIzaSyBLbc_IMKUfMTdokXqOWLMCXErOUJTwhX4"
 })(SiteList);

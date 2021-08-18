@@ -32,7 +32,7 @@ const UserList = () => {
                                             <Image img={"/users/avatar2.png"} width={300} height={225} alt={"Photo de profil par défault"} />}
                                     </div>
                                 </div>
-                                <Link to={{pathname: '/users/' + user.id}} className="link__back">
+                                <Link to={{pathname: '/users/' + user.id}} className="btn__link__back">
                                     <span>{user.id === currentUser.uid ? 'Mes informations' : 'Plus d\'informations sur ' + user.name}</span></Link>
                             </li>
                         ))}

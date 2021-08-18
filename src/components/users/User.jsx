@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 import firebase from '../../config/config.jsx';
 import Image from '../common/Image.jsx';
 
@@ -41,7 +41,7 @@ class User extends Component {
                 <React.Fragment>
                     <section>
                         <div>
-                            <Link to="/users" className="link__back">
+                            <Link to="/users" className="btn__link__back btn__link__previous">
                                 <p>Retour aux utilisateurs</p>
                             </Link>
                         </div>
@@ -62,17 +62,17 @@ class User extends Component {
                                     <ul className="container__listes__users">
                                         {birds.map(bird => (
                                             <li key={bird.id}>
-                                                <Link className="link__back"
-                                                      to={{pathname: '/captures/' + bird.id}}>Voir {bird.name}</Link>
+                                                <Link className="btn__link__back"
+                                                      to={{pathname: '/captures/' + bird.id}}><span>Voir {bird.name}</span></Link>
                                                 <p></p>
                                             </li>
                                         ))}
                                         {birds.length === 0 &&
                                         <div>{user.userUid === currentUser.uid ? 'Je n\'ai' : this.state.user.name + 'n\'a'} pas
-                                            encore capturé d'oiseau&nbsp;! </div>
+                                            encore capturé d'oiseau </div>
                                         }
                                         {user.userUid === currentUser.uid &&
-                                        <Link className="link__back" to={'/capture/new'}>Je rajoute une capture</Link>
+                                        <Link className="btn__link__back" to={'/capture/new'}><span>Je rajoute une capture</span></Link>
                                         }
                                     </ul>
                                 </section>
@@ -94,12 +94,15 @@ class User extends Component {
                                         {sites.length === 0 &&
                                         <div>
                                             <p>
-                                                {user.userUid === currentUser.uid ? 'Je n\'ai pas encore de site' : user.name + ' n\'a pas encore ajouter de site!'}
+                                                {user.userUid === currentUser.uid ? 'Je n\'ai pas encore de site' : user.name + ' n\'a pas encore ajouter de site'}
                                             </p>
                                         </div>
                                         }
                                         {user.userUid === currentUser.uid &&
-                                        <Link className="link__back" to={'/sites/new'}>Je rajoute un site</Link>
+                                        <Link className="btn__link__back" to={'/sites/new'}>
+                                            <span>
+                                            Je rajoute un site
+                                        </span></Link>
                                         }
                                     </ul>
                                 </section>

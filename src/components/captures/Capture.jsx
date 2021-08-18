@@ -26,12 +26,19 @@ class Capture extends Component {
         let user = firebase.auth().currentUser;
         return (
             <React.Fragment>
-                <section>
+                <section className="catch__container">
+                    {user.uid !== this.state.capture.userUid &&
+                    <div>
+                        <Link to="/users" className="btn__link__back btn__link__previous btn__back_users">
+                            <p>Retour aux utilisateurs</p>
+                        </Link>
+                    </div>
+                    }
                     <div className="catch__name">
                         <h2 aria-level="2">{this.state.capture.name}</h2>
                         {user.uid === this.state.capture.userUid &&
                         <div>
-                            <Link className="link__back" to={{pathname: '/edit/' + this.props.match.params.id}}>Modifier {this.state.capture.name}
+                            <Link className="btn__link__back" to={{pathname: '/edit/' + this.props.match.params.id}}><span>Modifier {this.state.capture.name}</span>
                             </Link>
                         </div>
                         }
@@ -87,6 +94,10 @@ class Capture extends Component {
                             </div>
                         </div>
                     </section>
+                    {user.uid === this.state.capture.userUid &&
+                    <Link to={'/captures'}
+                          className="btn__link__back container__all_catches"><span>Voir toutes mes captures</span></Link>
+                    }
                 </section>
             </React.Fragment>
         );

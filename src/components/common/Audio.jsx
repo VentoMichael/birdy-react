@@ -9,7 +9,6 @@ export default function Audio(props) {
             setUrl(url);
         })
     })
-
     return (
         <figure>
             <audio
