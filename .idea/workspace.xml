@@ -4,10 +4,9 @@
     <list default="true" id="17828cd5-a385-432b-b5c3-1b610e6645b4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/GoogleMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/GoogleMap.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Nav.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/captures/EditCapture.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/EditCapture.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/captures/NewCapture.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/NewCapture.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +78,7 @@
       <workItem from="1627287978261" duration="5450000" />
       <workItem from="1627300144895" duration="103672000" />
       <workItem from="1628415291989" duration="21600000" />
-      <workItem from="1628877665740" duration="22896000" />
+      <workItem from="1628877665740" duration="23661000" />
     </task>
     <servers />
   </component>

@@ -343,7 +343,9 @@ a.btn__link__previous:hover:after {
     align-items: center;
     grid-gap: 10px;
 }
-
+.btn__inscription{
+    margin-bottom: 15px;
+}
 button {
     font-size: 1em;
 }
@@ -426,7 +428,7 @@ div .container__catch__infos {
 }
 
 .list__new__catches div {
-    margin: 15px 0 40px;
+    margin: 15px 0 20px;
 }
 
 .list__new__catches div:last-child {

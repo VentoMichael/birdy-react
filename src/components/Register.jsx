@@ -1,7 +1,6 @@
-import React, {useEffect, useRef, useContext, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Link, Redirect} from "react-router-dom";
 import firebase from '../config/config.jsx';
-import { AuthContext } from '../context/Auth.jsx';
 
 const Register = () => {
     const userMail = useRef('');
@@ -14,7 +13,6 @@ const Register = () => {
     const [idScience, setIdScience] = useState(false);
     const [emailUse, setEmailUse] = useState(false);
     const [weakPass, setWeakPass] = useState(false);
-    const {currentUser} = useContext(AuthContext);
 
     const createUser = (e) => {
         e.preventDefault();
@@ -88,7 +86,8 @@ const Register = () => {
             <section>
                 <div className="form__container">
                     <h2 aria-level="2" className="title__login">Formulaire d'inscription</h2>
-                    <form action="#" method="POST" className="form container__login form_register" onSubmit={createUser}>
+                    <form action="#" method="POST" onSubmit={createUser}>
+                        <div className="form container__login form_register">
                             <div className='container__form_edition_bird'>
                                 <label htmlFor="name">Nom</label>
                                 <input type="text" name="name" id="name" placeholder="Marco Polo"
@@ -137,16 +136,21 @@ const Register = () => {
                                 <p className="errors">Le mot de passe doit avoir 6 caractères minimum</p>
                                 }
                             </div>
-                        <div>
-                            <button type="submit" className="btn__link__back"><span>S'inscrire</span></button>
                         </div>
-                        {emptyField === true &&
-                        <p className="errors">Tous les champs doivent être remplis</p>
-                        }
+
+                        <div>
+                            {emptyField === true &&
+                            <p className="errors">Tous les champs doivent être remplis</p>
+                            }
+                            <button type="submit" className="btn__link__back btn__inscription"><span>S'inscrire</span></button>
+                        </div>
+
                     </form>
-                    <div>
-                        <Link to='/' className="link__back">J'ai déjà un compte</Link>
-                    </div>
+
+                </div>
+
+                <div>
+                    <Link to='/' className="link__back">J'ai déjà un compte</Link>
                 </div>
             </section>
         </React.Fragment>
