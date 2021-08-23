@@ -1,7 +1,6 @@
-import React, {useEffect, useRef, useContext, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Redirect, Link} from 'react-router-dom';
 import firebase from '../config/config.jsx';
-import {AuthContext} from '../context/Auth.jsx';
 
 const Login = () => {
     const [isLogged, setisLogged] = useState(false);

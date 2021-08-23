@@ -25,7 +25,7 @@ const SiteList = (props) => {
                         <h2>Sites de baguage</h2>
                         <Link className="btn__link__back" to={'/sites/new'}><span>Nouveau site</span></Link>
                     </div>
-                    <div className="container__login container__listes">
+                    <div className="container__login container__listes container__sites">
                         {leState.map(map => (
                             <div key={map.id}>
                                 <p>Endroit du site : <span>{map.name}</span></p>

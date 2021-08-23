@@ -179,25 +179,25 @@ const NewCapture = () => {
                                     </div>
                                     <div>
                                         <input type="radio" id="two" name="adiposity" value="2" onChange={handleAdiposity}/>
-                                        <label htmlFor="two">2</label> <span>couches de graisse</span>
+                                        <label htmlFor="two">2 <span>couches de graisse</span></label>
 
                                     </div>
                                     <div>
                                         <input type="radio" id="three" name="adiposity" value="3"
                                                onChange={handleAdiposity}/>
-                                        <label htmlFor="three">3</label> <span>couches de graisse</span>
+                                        <label htmlFor="three">3 <span>couches de graisse</span></label>
 
                                     </div>
                                     <div>
                                         <input type="radio" id="four" name="adiposity" value="4"
                                                onChange={handleAdiposity}/>
-                                        <label htmlFor="four">4</label> <span>couches de graisse</span>
+                                        <label htmlFor="four">4 <span>couches de graisse</span></label>
 
                                     </div>
                                     <div>
                                         <input type="radio" id="five" name="adiposity" value="5"
                                                onChange={handleAdiposity}/>
-                                        <label htmlFor="five">5</label> <span>couches de graisse</span>
+                                        <label htmlFor="five">5 <span>couches de graisse</span></label>
 
                                     </div>
                                 </div>

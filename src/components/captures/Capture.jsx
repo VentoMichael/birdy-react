@@ -1,7 +1,6 @@
-import React, {useState, useContext, Component} from 'react';
+import React, { Component} from 'react';
 import {Link, Redirect} from "react-router-dom";
 import firebase from '../../config/config.jsx';
-import {AuthContext} from '../../context/Auth.jsx';
 
 class Capture extends Component {
     state = {

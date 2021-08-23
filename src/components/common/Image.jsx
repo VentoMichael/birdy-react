@@ -11,6 +11,6 @@ export default function Image(props) {
     })
 
     return (
-        <img className="bird__image" src={url} width={props.width} height={props.height} alt="Image de profil de l'oiseau" />
+        <img className="bird__image" src={url} width={props.width} height={props.height} alt={props.alt} />
     )
 }

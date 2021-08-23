@@ -1,5 +1,5 @@
 import React, {useState, useEffect,useContext} from 'react';
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 import firebase from '../../config/config.jsx';
 import Image from '../common/Image.jsx';
 import {AuthContext} from '../../context/Auth.jsx';

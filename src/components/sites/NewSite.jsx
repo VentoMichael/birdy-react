@@ -12,37 +12,12 @@ const NewSite = () => {
     const [succes, setSucces] = useState(false);
     const {currentUser} = useContext(AuthContext);
 
-
-    const handleLat = ({currentTarget: input}) => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                input.value =  Math.round(position.coords.latitude*100)/100;
-                setLatitude(position.coords.latitude)
-            });
-        } else {
-            const lat = input.value;
-            setLatitude(parseFloat(lat))
-        }
-    };
-    const handleLong = ({currentTarget: input}) => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                input.value = Math.round(position.coords.longitude*100)/100;
-                setLongitude(position.coords.longitude)
-            });
-        } else {
-            const long = input.value;
-            setLatitude(parseFloat(long))
-        }
-    };
-
     const saveNewSite = (e) => {
         e.preventDefault();
         if (name === '' || longitude === '' || latitude === '' || superficie === ''){
             setEmpty(true)
         }
         else {
-            console.log(new firebase.firestore.GeoPoint(latitude, longitude))
             firebase.firestore().collection('sites').add({
                 name:name,
                 geopoint: new firebase.firestore.GeoPoint(latitude, longitude),
@@ -64,26 +39,29 @@ const NewSite = () => {
         <React.Fragment>
             <section>
                 <h2>Créer un nouveau site</h2>
-                {empty === true &&
-                <p className="errors">Tous les champs doivent être rempli</p>
-                }
-                <form action="#" method="POST" className="container__login" onSubmit={saveNewSite}>
-                    <div className="container__form_edition_bird">
-                        <label htmlFor="name">Quel est le nom du site&nbsp;?</label>
-                        <input onChange={(e) => setName(e.target.value)} type="text" id="name" name="name" placeholder="Bruxelles"/>
+                <form action="#" method="POST" onSubmit={saveNewSite}>
+                    <div className="container__login">
+
+                        <div className="container__form_edition_bird">
+                            <label htmlFor="name">Quel est le nom du site&nbsp;?</label>
+                            <input onChange={(e) => setName(e.target.value)} type="text" id="name" name="name" placeholder="Bruxelles"/>
+                        </div>
+                        <div className="container__form_edition_bird">
+                            <label htmlFor="longitude">Quelle est la longitude&nbsp;?</label>
+                            <input onChange={(e) => setLongitude(e.target.value)} type="number" step="0.01" id="longitude" name="longitude" placeholder="87.23"/>
+                        </div>
+                        <div className="container__form_edition_bird">
+                            <label htmlFor="latitude">Quelle est la latitude&nbsp;?</label>
+                            <input onChange={(e) => setLatitude(e.target.value)} type="number" step="0.01" id="latitude" name="latitude" placeholder="7.98"/>
+                        </div>
+                        <div className="container__form_edition_bird">
+                            <label htmlFor="superficie">Quelle est la superficie&nbsp;? (en <abbr title="kilomètre">km</abbr>)</label>
+                            <input onChange={(e) => setSuperficie(e.target.value)} type="number" id="superficie" name="superficie" placeholder="30"/>
+                        </div>
                     </div>
-                     <div className="container__form_edition_bird">
-                        <label htmlFor="longitude">Quelle est la longitude&nbsp;?</label>
-                        <input onChange={(e) => setLongitude(e.target.value)} type="number" step="0.01" id="longitude" name="longitude" placeholder="87.23"/>
-                    </div>
-                     <div className="container__form_edition_bird">
-                        <label htmlFor="latitude">Quelle est la latitude&nbsp;?</label>
-                        <input onChange={(e) => setLatitude(e.target.value)} type="number" step="0.01" id="latitude" name="latitude" placeholder="7.98"/>
-                    </div>
-                     <div className="container__form_edition_bird">
-                        <label htmlFor="superficie">Quelle est la superficie&nbsp;? (en <abbr title="kilomètre">km</abbr>)</label>
-                        <input onChange={(e) => setSuperficie(e.target.value)} type="number" id="superficie" name="superficie" placeholder="30"/>
-                    </div>
+                    {empty === true &&
+                    <p className="errors">Tous les champs doivent être rempli</p>
+                    }
                     <div>
                         <button className="btn__link__back"><span>Enregistrer</span></button>
                     </div>

@@ -18,8 +18,8 @@ export class MapContainer extends Component{
         })
     };
     containerStyle = {
-        maxWidth: '288px',
-        maxHeight: '300px',
+        maxWidth: '235px',
+        maxHeight: '250px',
         marginBottom:'200px'
     }
     render(){

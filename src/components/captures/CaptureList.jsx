@@ -9,7 +9,7 @@ const CaptureList = () => {
     useEffect(() => {
         const fetchData = async () => {
             const db = firebase.firestore();
-            const data = await db.collection('catches').where('userUid', '==', currentUser ? currentUser.uid : '').get();
+            const data = await db.collection('catches').where('userUid', '==', currentUser.uid).get();
             setleState(data.docs.map(doc => ({...doc.data(), id: doc.id})));
         };
 

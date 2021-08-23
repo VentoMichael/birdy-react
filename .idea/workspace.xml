@@ -3,11 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="17828cd5-a385-432b-b5c3-1b610e6645b4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/captures/EditCapture.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/EditCapture.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/captures/Capture.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/Capture.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/captures/CaptureList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/CaptureList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/captures/NewCapture.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/captures/NewCapture.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/GoogleMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/GoogleMap.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Image.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Image.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sites/NewSite.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sites/NewSite.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sites/SitesList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sites/SitesList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/UsersList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/UsersList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/Auth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/komikax/komikax_-webfont-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/komikax/komikax_-webfont-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/komikax/komikax_-webfont-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/komikax/komikax_-webfont-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/komikax/komikax_-webfont-webfont.woff2" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/sites" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -78,7 +92,8 @@
       <workItem from="1627287978261" duration="5450000" />
       <workItem from="1627300144895" duration="103672000" />
       <workItem from="1628415291989" duration="21600000" />
-      <workItem from="1628877665740" duration="23661000" />
+      <workItem from="1628877665740" duration="23911000" />
+      <workItem from="1629698843200" duration="1857000" />
     </task>
     <servers />
   </component>
@@ -103,7 +118,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/users/User.jsx</url>
           <line>26</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
